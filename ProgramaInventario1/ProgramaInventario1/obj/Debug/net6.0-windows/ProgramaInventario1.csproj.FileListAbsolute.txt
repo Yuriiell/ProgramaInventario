@@ -1,0 +1,7 @@
+C:\Users\HP\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.Form1.resources
+C:\Users\HP\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.AssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.csproj.CoreCompileInputs.cache

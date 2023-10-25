@@ -50,6 +50,7 @@
             label7 = new Label();
             buttonBuscarTodo = new Button();
             buttonSeleccionarProducto = new Button();
+            buttonVolverMenuPrincipal = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -256,11 +257,22 @@
             buttonSeleccionarProducto.UseVisualStyleBackColor = true;
             buttonSeleccionarProducto.Click += buttonSeleccionarProducto_Click;
             // 
+            // buttonVolverMenuPrincipal
+            // 
+            buttonVolverMenuPrincipal.Location = new Point(12, 1397);
+            buttonVolverMenuPrincipal.Name = "buttonVolverMenuPrincipal";
+            buttonVolverMenuPrincipal.Size = new Size(124, 23);
+            buttonVolverMenuPrincipal.TabIndex = 26;
+            buttonVolverMenuPrincipal.Text = "Menu Principal";
+            buttonVolverMenuPrincipal.UseVisualStyleBackColor = true;
+            buttonVolverMenuPrincipal.Click += buttonVolverMenuPrincipal_Click;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1017, 1444);
+            ClientSize = new Size(1009, 1444);
+            Controls.Add(buttonVolverMenuPrincipal);
             Controls.Add(buttonSeleccionarProducto);
             Controls.Add(buttonBuscarTodo);
             Controls.Add(label7);
@@ -316,5 +328,6 @@
         private Label label7;
         private Button buttonBuscarTodo;
         private Button buttonSeleccionarProducto;
+        private Button buttonVolverMenuPrincipal;
     }
 }

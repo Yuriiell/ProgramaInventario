@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProgramaInventario1.vistas
 {
-    public partial class Form1 : Form
+    public partial class Ventas : Form
     {
-        public Form1()
+        public Ventas()
         {
             InitializeComponent();
         }

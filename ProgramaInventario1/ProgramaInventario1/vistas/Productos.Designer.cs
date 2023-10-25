@@ -49,6 +49,7 @@
             buttonBuscarTodo = new Button();
             buttonSeleccionarProducto = new Button();
             dataGridView1 = new DataGridView();
+            buttonVolvermenuPrincipal = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -248,11 +249,22 @@
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // buttonVolvermenuPrincipal
+            // 
+            buttonVolvermenuPrincipal.Location = new Point(12, 966);
+            buttonVolvermenuPrincipal.Name = "buttonVolvermenuPrincipal";
+            buttonVolvermenuPrincipal.Size = new Size(125, 23);
+            buttonVolvermenuPrincipal.TabIndex = 26;
+            buttonVolvermenuPrincipal.Text = "Menu Principal";
+            buttonVolvermenuPrincipal.UseVisualStyleBackColor = true;
+            buttonVolvermenuPrincipal.Click += buttonVolvermenuPrincipal_Click;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonVolvermenuPrincipal);
             Controls.Add(buttonSeleccionarProducto);
             Controls.Add(buttonBuscarTodo);
             Controls.Add(label7);
@@ -277,6 +289,7 @@
             Name = "Productos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Productos";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -306,5 +319,6 @@
         private Button buttonBuscarTodo;
         private Button buttonSeleccionarProducto;
         private DataGridView dataGridView1;
+        private Button buttonVolvermenuPrincipal;
     }
 }

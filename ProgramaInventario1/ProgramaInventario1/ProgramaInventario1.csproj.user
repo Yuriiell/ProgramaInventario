@@ -13,6 +13,24 @@
     <Compile Update="vistas\Mermas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="vistas\MermasComidaPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\MermasCortes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\MermasFiestaChicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\MermasGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\MermasMalEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\MermasPlatosDevueltos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="vistas\Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>

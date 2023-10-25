@@ -12,6 +12,8 @@ namespace ProgramaInventario1.vistas
 {
     public partial class Productos : Form
     {
+        //en la base de datos la tabla se llama Producto
+
         public Productos()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace ProgramaInventario1.vistas
 
         }
 
-        //este boton busca el producto en la base de datos
+        //este boton busca el producto o productos en la base de datos
 
         private void buttonBuscarProducto_Click(object sender, EventArgs e)
         {
@@ -109,7 +111,7 @@ namespace ProgramaInventario1.vistas
 
 
 
-        //Con este boton se muestra toda la infromacion de toda la tabla sigueinte
+        //Con este boton se muestra toda la infromacion de toda la tabla 
 
         private void buttonBuscarTodo_Click(object sender, EventArgs e)
         {
@@ -128,6 +130,11 @@ namespace ProgramaInventario1.vistas
 
         }
 
-
+        private void buttonVolvermenuPrincipal_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipalForm = new MenuPrincipal();
+            menuPrincipalForm.Show();
+            this.Hide(); 
+        }
     }
 }

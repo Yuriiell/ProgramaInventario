@@ -36,6 +36,7 @@
             botonVistaVEntas = new Button();
             botonVistaLicores = new Button();
             botonVistaResumen = new Button();
+            buttonSalirPrograma = new Button();
             SuspendLayout();
             // 
             // botonVistaProductos
@@ -118,11 +119,22 @@
             botonVistaResumen.UseVisualStyleBackColor = true;
             botonVistaResumen.Click += botonVistaResumen_Click;
             // 
+            // buttonSalirPrograma
+            // 
+            buttonSalirPrograma.Location = new Point(12, 966);
+            buttonSalirPrograma.Name = "buttonSalirPrograma";
+            buttonSalirPrograma.Size = new Size(75, 23);
+            buttonSalirPrograma.TabIndex = 8;
+            buttonSalirPrograma.Text = "Salir";
+            buttonSalirPrograma.UseVisualStyleBackColor = true;
+            buttonSalirPrograma.Click += buttonSalirPrograma_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonSalirPrograma);
             Controls.Add(botonVistaResumen);
             Controls.Add(botonVistaLicores);
             Controls.Add(botonVistaVEntas);
@@ -134,6 +146,8 @@
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MenuPrincipal";
+            WindowState = FormWindowState.Maximized;
+            Load += MenuPrincipal_Load;
             ResumeLayout(false);
         }
 
@@ -147,5 +161,6 @@
         private Button botonVistaVEntas;
         private Button botonVistaLicores;
         private Button botonVistaResumen;
+        private Button buttonSalirPrograma;
     }
 }

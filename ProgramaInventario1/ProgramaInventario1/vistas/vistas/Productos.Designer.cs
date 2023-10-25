@@ -50,6 +50,7 @@
             label7 = new Label();
             buttonBuscarTodo = new Button();
             buttonSeleccionarProducto = new Button();
+            buttonVolverMenuPrincipal = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -112,7 +113,7 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(45, 898);
+            dataGridView2.Location = new Point(41, 849);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(919, 494);
@@ -238,7 +239,7 @@
             // 
             // buttonBuscarTodo
             // 
-            buttonBuscarTodo.Location = new Point(45, 829);
+            buttonBuscarTodo.Location = new Point(41, 801);
             buttonBuscarTodo.Name = "buttonBuscarTodo";
             buttonBuscarTodo.Size = new Size(113, 23);
             buttonBuscarTodo.TabIndex = 24;
@@ -256,11 +257,22 @@
             buttonSeleccionarProducto.UseVisualStyleBackColor = true;
             buttonSeleccionarProducto.Click += buttonSeleccionarProducto_Click;
             // 
+            // buttonVolverMenuPrincipal
+            // 
+            buttonVolverMenuPrincipal.Location = new Point(12, 1397);
+            buttonVolverMenuPrincipal.Name = "buttonVolverMenuPrincipal";
+            buttonVolverMenuPrincipal.Size = new Size(124, 23);
+            buttonVolverMenuPrincipal.TabIndex = 26;
+            buttonVolverMenuPrincipal.Text = "Menu Principal";
+            buttonVolverMenuPrincipal.UseVisualStyleBackColor = true;
+            buttonVolverMenuPrincipal.Click += buttonVolverMenuPrincipal_Click;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1017, 1444);
+            ClientSize = new Size(1009, 1444);
+            Controls.Add(buttonVolverMenuPrincipal);
             Controls.Add(buttonSeleccionarProducto);
             Controls.Add(buttonBuscarTodo);
             Controls.Add(label7);
@@ -316,5 +328,6 @@
         private Label label7;
         private Button buttonBuscarTodo;
         private Button buttonSeleccionarProducto;
+        private Button buttonVolverMenuPrincipal;
     }
 }

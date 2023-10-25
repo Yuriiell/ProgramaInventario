@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramaInventario1", "ProgramaInventario1\ProgramaInventario1.csproj", "{84C4DD97-C9AD-437F-999F-6E90868DB3CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramaInventario1", "ProgramaInventario1\ProgramaInventario1.csproj", "{84C4DD97-C9AD-437F-999F-6E90868DB3CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{17A82CEB-5B8B-41DF-8F87-F7F82880ACA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{84C4DD97-C9AD-437F-999F-6E90868DB3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84C4DD97-C9AD-437F-999F-6E90868DB3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84C4DD97-C9AD-437F-999F-6E90868DB3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17A82CEB-5B8B-41DF-8F87-F7F82880ACA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A82CEB-5B8B-41DF-8F87-F7F82880ACA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A82CEB-5B8B-41DF-8F87-F7F82880ACA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A82CEB-5B8B-41DF-8F87-F7F82880ACA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

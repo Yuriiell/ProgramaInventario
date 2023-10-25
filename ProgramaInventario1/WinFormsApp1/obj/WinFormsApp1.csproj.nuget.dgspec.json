@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {}
+    "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {
+    "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
-        "projectName": "ProgramaInventario1",
-        "projectPath": "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
+        "projectUniqueName": "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectName": "WinFormsApp1",
+        "projectPath": "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\WinFormsApp1\\WinFormsApp1.csproj",
         "packagesPath": "C:\\Users\\yosof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\obj\\",
+        "outputPath": "C:\\Users\\yosof\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yosof\\AppData\\Roaming\\NuGet\\NuGet.Config",

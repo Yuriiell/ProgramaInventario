@@ -59,7 +59,7 @@ namespace ProgramaInventario1.vistas
 
         }
 
-        //aqui se ingersa la cantidad del corte, es el campo Cantidad de la tabla
+        //aqui se ingersa la cantidad de productos en mal estado, es el campo Cantidad de la tabla
 
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)
         {

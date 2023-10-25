@@ -79,9 +79,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(364, 302);
             label3.Name = "label3";
-            label3.Size = new Size(255, 15);
+            label3.Size = new Size(104, 15);
             label3.TabIndex = 17;
-            label3.Text = "Cantidad a multiplicar por el total del producto";
+            label3.Text = "Cantidad del corte";
             // 
             // buttonSeleccionarProducto
             // 
@@ -151,7 +151,7 @@
             // 
             // textBoxCantidad
             // 
-            textBoxCantidad.Location = new Point(634, 299);
+            textBoxCantidad.Location = new Point(488, 299);
             textBoxCantidad.Name = "textBoxCantidad";
             textBoxCantidad.Size = new Size(100, 23);
             textBoxCantidad.TabIndex = 24;

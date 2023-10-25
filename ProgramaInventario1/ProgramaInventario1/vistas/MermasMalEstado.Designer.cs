@@ -56,7 +56,7 @@
             // 
             // textBoxCantidad
             // 
-            textBoxCantidad.Location = new Point(701, 423);
+            textBoxCantidad.Location = new Point(654, 423);
             textBoxCantidad.Name = "textBoxCantidad";
             textBoxCantidad.Size = new Size(100, 23);
             textBoxCantidad.TabIndex = 36;
@@ -105,9 +105,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(431, 426);
             label3.Name = "label3";
-            label3.Size = new Size(255, 15);
+            label3.Size = new Size(205, 15);
             label3.TabIndex = 31;
-            label3.Text = "Cantidad a multiplicar por el total del producto";
+            label3.Text = "Cantidad de productos en mal estado";
             // 
             // buttonSeleccionarProducto
             // 

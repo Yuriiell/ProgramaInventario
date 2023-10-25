@@ -11,7 +11,10 @@ namespace ProgramaInventario1.util
 {
     internal class ExcelGenerator
     {
-        static void Main(string[] args)
+
+        //EXCEL no se implementa en el proyecto
+
+        /**static void Main(string[] args)
         {
             Excel.Application excelApp = new Excel.Application();
             Excel.Workbook excelWB = excelApp.Workbooks.Add("");
@@ -21,6 +24,6 @@ namespace ProgramaInventario1.util
             excelWB.Close();
             excelApp.Quit();
             
-        }
+        }**/
     }
 }

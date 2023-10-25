@@ -11,10 +11,24 @@ namespace ProgramaInventario1.DAO
 {
     internal class DAOProducto
     {
+        //Prueba Actualización
+
+        /**static void Main(string[] args)
+        {
+            int id = 1;
+            string nombre = "NuevoNombre";
+            double precio = 10.99;
+            string unidadMedida = "Unidad";
+            string tipo = "TipoEjemplo";
+
+            ActualizarProducto(id, nombre, precio, unidadMedida, tipo);
+
+            Console.WriteLine("Producto actualizado con éxito.");
+        }**/
 
 
         //***** CRUD de Producto de la base de datos *****
-        
+
         public void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
@@ -60,7 +74,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public void ActualizarProducto(int id, string nombre, double precio, string unidadMedida, string tipo)
+        public static void ActualizarProducto(int id, string nombre, double precio, string unidadMedida, string tipo)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -118,6 +132,41 @@ namespace ProgramaInventario1.DAO
 
             return productos;
         }
+
+        public Producto ObtenerProductoPorId(int id)
+        {
+            Producto producto = null;
+
+            string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
+            SqlConnection conexion = new SqlConnection(conexion1);
+
+            using (conexion)
+            {
+                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto WHERE id = @Id";
+
+                using (SqlCommand command = new SqlCommand(query, conexion))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    conexion.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string nombre = reader.GetString(1);
+                            decimal precio = reader.GetDecimal(2);
+                            string unidadMedida = reader.GetString(3);
+                            string tipo = reader.GetString(4);
+
+                            producto = new Producto(id, nombre, precio, unidadMedida, tipo);
+                        }
+                    }
+                }
+            }
+
+            return producto;
+        }
+
 
     }
 }

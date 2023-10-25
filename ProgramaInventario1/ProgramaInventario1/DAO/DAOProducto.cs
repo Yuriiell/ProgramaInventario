@@ -1,32 +1,29 @@
-﻿using System;
+﻿using ProgramaInventario1.conexion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Collections;
 
 namespace ProgramaInventario1.DAO
 {
     internal class DAOProducto
     {
 
-
-        //***** CRUD de Producto de la base de datos *****
-        
-        public void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
+        public void InsertarProducto(int id, string nombre, decimal precio, string unidadMedida, string tipo)
         {
-            string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
-            SqlConnection conexion = new SqlConnection(conexion1);
+            SqlConnection conexion = SingletonConexion.GetInstancia();
 
             using (conexion)
             {
-                string query = "INSERT INTO Producto (nombre, precio, unidadMedida, tipo) " +
-                               "VALUES (@Nombre, @Precio, @UnidadMedida, @Tipo)";
+                string query = "INSERT INTO Producto (id, nombre, precio, unidadMedida, tipo) " +
+                               "VALUES (@Id, @Nombre, @Precio, @UnidadMedida, @Tipo)";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
+                    command.Parameters.AddWithValue("@Id", id);
                     command.Parameters.AddWithValue("@Nombre", nombre);
                     command.Parameters.AddWithValue("@Precio", precio);
                     command.Parameters.AddWithValue("@UnidadMedida", unidadMedida);
@@ -41,8 +38,7 @@ namespace ProgramaInventario1.DAO
 
         public void EliminarProducto(int id)
         {
-            string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
-            SqlConnection conexion = new SqlConnection(conexion1);
+            SqlConnection conexion = SingletonConexion.GetInstancia();
 
             using (conexion)
             {
@@ -59,11 +55,9 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-
-        public void ActualizarProducto(int id, string nombre, double precio, string unidadMedida, string tipo)
+        public void ActualizarProducto(int id, string nombre, decimal precio, string unidadMedida, string tipo)
         {
-            string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
-            SqlConnection conexion = new SqlConnection(conexion1);
+            SqlConnection conexion = SingletonConexion.GetInstancia();
 
             using (conexion)
             {
@@ -79,45 +73,12 @@ namespace ProgramaInventario1.DAO
 
                     conexion.Open();
                     command.ExecuteNonQuery();
+                    conexion.Close();
                 }
             }
         }
 
-        public List<Producto> ObtenerProductos()
-        {
-            List<Producto> productos = new List<Producto>();
 
-            string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
-            SqlConnection conexion = new SqlConnection(conexion1);
-
-            using (conexion)
-            {
-                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto";
-
-                using (SqlCommand command = new SqlCommand(query, conexion))
-                {
-                    conexion.Open();
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            int id = reader.GetInt32(0);
-                            string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
-                            string unidadMedida = reader.GetString(3);
-                            string tipo = reader.GetString(4);
-
-                            Producto producto = new Producto(nombre, precio, unidadMedida, tipo);
-                            productos.Add(producto);
-                        }
-                    }
-
-                }
-            }
-
-            return productos;
-        }
 
     }
 }

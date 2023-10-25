@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1035, 1444);
+            ClientSize = new Size(1924, 1001);
             Name = "Mermas";
             Text = "Reporte de Mermas";
             ResumeLayout(false);

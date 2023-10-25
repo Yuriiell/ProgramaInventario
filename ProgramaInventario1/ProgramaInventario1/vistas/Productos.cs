@@ -128,15 +128,6 @@ namespace ProgramaInventario1.vistas
 
         }
 
-<<<<<<< Updated upstream
-        private void buttonVolverMenuPrincipal_Click(object sender, EventArgs e)
-        {
-            MenuPrincipal MenuPrincipalForms = new MenuPrincipal();
-            MenuPrincipalForms.Show();
-            this.Hide();
-        }
-=======
 
->>>>>>> Stashed changes
     }
 }

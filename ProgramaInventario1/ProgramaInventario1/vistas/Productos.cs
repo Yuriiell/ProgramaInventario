@@ -128,6 +128,6 @@ namespace ProgramaInventario1.vistas
 
         }
 
-       
+
     }
 }

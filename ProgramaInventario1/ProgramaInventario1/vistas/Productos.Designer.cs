@@ -112,7 +112,7 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(45, 898);
+            dataGridView2.Location = new Point(41, 849);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(919, 494);
@@ -238,7 +238,7 @@
             // 
             // buttonBuscarTodo
             // 
-            buttonBuscarTodo.Location = new Point(45, 829);
+            buttonBuscarTodo.Location = new Point(41, 801);
             buttonBuscarTodo.Name = "buttonBuscarTodo";
             buttonBuscarTodo.Size = new Size(113, 23);
             buttonBuscarTodo.TabIndex = 24;

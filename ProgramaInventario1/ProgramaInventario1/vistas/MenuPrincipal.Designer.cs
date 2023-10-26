@@ -123,7 +123,7 @@
             // 
             buttonSalirPrograma.Location = new Point(12, 966);
             buttonSalirPrograma.Name = "buttonSalirPrograma";
-            buttonSalirPrograma.Size = new Size(75, 23);
+            buttonSalirPrograma.Size = new Size(82, 23);
             buttonSalirPrograma.TabIndex = 8;
             buttonSalirPrograma.Text = "Salir";
             buttonSalirPrograma.UseVisualStyleBackColor = true;

@@ -42,6 +42,7 @@
             label1 = new Label();
             buttonVolverMenuMermas = new Button();
             buttonGuardarCantidad = new Button();
+            buttonEditarProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaMermasPlatosDevueltos).BeginInit();
             SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             // 
             // buttonEliminarProducto
             // 
-            buttonEliminarProducto.Location = new Point(960, 331);
+            buttonEliminarProducto.Location = new Point(960, 403);
             buttonEliminarProducto.Name = "buttonEliminarProducto";
             buttonEliminarProducto.Size = new Size(118, 23);
             buttonEliminarProducto.TabIndex = 45;
@@ -178,11 +179,22 @@
             buttonGuardarCantidad.UseVisualStyleBackColor = true;
             buttonGuardarCantidad.Click += buttonGuardarCantidad_Click;
             // 
+            // buttonEditarProducto
+            // 
+            buttonEditarProducto.Location = new Point(960, 344);
+            buttonEditarProducto.Name = "buttonEditarProducto";
+            buttonEditarProducto.Size = new Size(118, 23);
+            buttonEditarProducto.TabIndex = 52;
+            buttonEditarProducto.Text = "Editar Producto";
+            buttonEditarProducto.UseVisualStyleBackColor = true;
+            buttonEditarProducto.Click += buttonEditarProducto_Click;
+            // 
             // MermasPlatosDevueltos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonEditarProducto);
             Controls.Add(buttonGuardarCantidad);
             Controls.Add(buttonVolverMenuMermas);
             Controls.Add(buttonMostrarTodo);
@@ -220,5 +232,6 @@
         private Label label1;
         private Button buttonVolverMenuMermas;
         private Button buttonGuardarCantidad;
+        private Button buttonEditarProducto;
     }
 }

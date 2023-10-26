@@ -42,6 +42,7 @@
             label2 = new Label();
             label3 = new Label();
             buttonGuardarCantidad = new Button();
+            buttonEditarProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaMermasFiestaChicas).BeginInit();
             SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             // 
             // buttonEliminarProducto
             // 
-            buttonEliminarProducto.Location = new Point(708, 295);
+            buttonEliminarProducto.Location = new Point(708, 372);
             buttonEliminarProducto.Name = "buttonEliminarProducto";
             buttonEliminarProducto.Size = new Size(118, 23);
             buttonEliminarProducto.TabIndex = 69;
@@ -178,11 +179,22 @@
             buttonGuardarCantidad.UseVisualStyleBackColor = true;
             buttonGuardarCantidad.Click += buttonGuardarCantidad_Click;
             // 
+            // buttonEditarProducto
+            // 
+            buttonEditarProducto.Location = new Point(708, 311);
+            buttonEditarProducto.Name = "buttonEditarProducto";
+            buttonEditarProducto.Size = new Size(118, 23);
+            buttonEditarProducto.TabIndex = 77;
+            buttonEditarProducto.Text = "Editar Producto";
+            buttonEditarProducto.UseVisualStyleBackColor = true;
+            buttonEditarProducto.Click += buttonEditarProducto_Click;
+            // 
             // MermasFiestaChicas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonEditarProducto);
             Controls.Add(buttonGuardarCantidad);
             Controls.Add(label3);
             Controls.Add(buttonVolverMenuMermas);
@@ -220,5 +232,6 @@
         private Label label2;
         private Label label3;
         private Button buttonGuardarCantidad;
+        private Button buttonEditarProducto;
     }
 }

@@ -42,6 +42,7 @@
             textBoxProducto = new TextBox();
             textBoxCantidad = new TextBox();
             buttonGuardarCantidad = new Button();
+            buttonEditarProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaGasto).BeginInit();
             SuspendLayout();
             // 
@@ -114,7 +115,7 @@
             // 
             // buttonEliminarProducto
             // 
-            buttonEliminarProducto.Location = new Point(774, 275);
+            buttonEliminarProducto.Location = new Point(774, 343);
             buttonEliminarProducto.Name = "buttonEliminarProducto";
             buttonEliminarProducto.Size = new Size(118, 23);
             buttonEliminarProducto.TabIndex = 8;
@@ -178,11 +179,22 @@
             buttonGuardarCantidad.UseVisualStyleBackColor = true;
             buttonGuardarCantidad.Click += buttonGuardarCantidad_Click;
             // 
+            // buttonEditarProducto
+            // 
+            buttonEditarProducto.Location = new Point(774, 289);
+            buttonEditarProducto.Name = "buttonEditarProducto";
+            buttonEditarProducto.Size = new Size(118, 23);
+            buttonEditarProducto.TabIndex = 32;
+            buttonEditarProducto.Text = "Editar Producto";
+            buttonEditarProducto.UseVisualStyleBackColor = true;
+            buttonEditarProducto.Click += buttonEditarProducto_Click;
+            // 
             // MermasGasto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonEditarProducto);
             Controls.Add(buttonGuardarCantidad);
             Controls.Add(textBoxCantidad);
             Controls.Add(textBoxProducto);
@@ -222,5 +234,6 @@
         private TextBox textBoxProducto;
         private TextBox textBoxCantidad;
         private Button buttonGuardarCantidad;
+        private Button buttonEditarProducto;
     }
 }

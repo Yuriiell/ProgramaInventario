@@ -109,13 +109,21 @@ namespace ProgramaInventario1.vistas
 
         }
 
-        //Para regresar al menu de las mermas
+        //Para regresar al menu de principal
 
         private void buttonVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
             MenuPrincipal menuPrincipalForm = new MenuPrincipal();
             menuPrincipalForm.Show();
             this.Hide();
+        }
+
+        //este boton edita la infromacion que se haya ingresado en los text box y se edita del producto previamente escogido.
+        //en los textbox, se puede ingresa cierta información, no necesariamente todo y solo cambia lo que se ingrese lo demás que no se haya puesto se queda igual.
+
+        private void buttonEditarProducto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

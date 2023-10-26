@@ -12,9 +12,18 @@ namespace ProgramaInventario1.vistas
 {
     public partial class Ventas : Form
     {
+        //no esta listo
+
         public Ventas()
         {
             InitializeComponent();
+        }
+
+        //aqui se muestra el total de ventas, ingresado por el usuario
+
+        private void textBoxTotalVentas_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

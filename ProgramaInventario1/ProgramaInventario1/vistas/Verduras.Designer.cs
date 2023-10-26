@@ -45,6 +45,7 @@
             label4 = new Label();
             textBoxCAntidad = new TextBox();
             buttonGuardarCantidad = new Button();
+            buttonEditarProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaGasto).BeginInit();
             SuspendLayout();
             // 
@@ -86,7 +87,7 @@
             // 
             // buttonEliminarProducto
             // 
-            buttonEliminarProducto.Location = new Point(835, 296);
+            buttonEliminarProducto.Location = new Point(835, 360);
             buttonEliminarProducto.Name = "buttonEliminarProducto";
             buttonEliminarProducto.Size = new Size(118, 23);
             buttonEliminarProducto.TabIndex = 21;
@@ -208,11 +209,22 @@
             buttonGuardarCantidad.UseVisualStyleBackColor = true;
             buttonGuardarCantidad.Click += buttonGuardarCantidad_Click;
             // 
+            // buttonEditarProducto
+            // 
+            buttonEditarProducto.Location = new Point(835, 309);
+            buttonEditarProducto.Name = "buttonEditarProducto";
+            buttonEditarProducto.Size = new Size(118, 23);
+            buttonEditarProducto.TabIndex = 31;
+            buttonEditarProducto.Text = "Editar Producto";
+            buttonEditarProducto.UseVisualStyleBackColor = true;
+            buttonEditarProducto.Click += buttonEditarProducto_Click;
+            // 
             // Verduras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonEditarProducto);
             Controls.Add(buttonGuardarCantidad);
             Controls.Add(textBoxCAntidad);
             Controls.Add(label4);
@@ -256,5 +268,6 @@
         private Label label4;
         private TextBox textBoxCAntidad;
         private Button buttonGuardarCantidad;
+        private Button buttonEditarProducto;
     }
 }

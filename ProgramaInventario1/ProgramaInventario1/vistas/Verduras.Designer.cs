@@ -54,6 +54,7 @@
             textBoxDia.Name = "textBoxDia";
             textBoxDia.Size = new Size(100, 23);
             textBoxDia.TabIndex = 25;
+            textBoxDia.TextChanged += textBoxDia_TextChanged;
             // 
             // textBoxProducto
             // 
@@ -61,6 +62,7 @@
             textBoxProducto.Name = "textBoxProducto";
             textBoxProducto.Size = new Size(100, 23);
             textBoxProducto.TabIndex = 24;
+            textBoxProducto.TextChanged += textBoxProducto_TextChanged;
             // 
             // dataGridViewTablaGasto
             // 
@@ -70,6 +72,7 @@
             dataGridViewTablaGasto.RowTemplate.Height = 25;
             dataGridViewTablaGasto.Size = new Size(591, 295);
             dataGridViewTablaGasto.TabIndex = 23;
+            dataGridViewTablaGasto.CellContentClick += dataGridViewTablaGasto_CellContentClick;
             // 
             // buttonMostrarTodo
             // 
@@ -79,6 +82,7 @@
             buttonMostrarTodo.TabIndex = 22;
             buttonMostrarTodo.Text = "Mostrar Todo";
             buttonMostrarTodo.UseVisualStyleBackColor = true;
+            buttonMostrarTodo.Click += buttonMostrarTodo_Click;
             // 
             // buttonEliminarProducto
             // 
@@ -88,6 +92,7 @@
             buttonEliminarProducto.TabIndex = 21;
             buttonEliminarProducto.Text = "Eliminar Producto";
             buttonEliminarProducto.UseVisualStyleBackColor = true;
+            buttonEliminarProducto.Click += buttonEliminarProducto_Click;
             // 
             // buttonAgregarProducto
             // 
@@ -97,6 +102,7 @@
             buttonAgregarProducto.TabIndex = 20;
             buttonAgregarProducto.Text = "Agregar Producto";
             buttonAgregarProducto.UseVisualStyleBackColor = true;
+            buttonAgregarProducto.Click += buttonAgregarProducto_Click;
             // 
             // label3
             // 
@@ -115,6 +121,7 @@
             buttonSeleccionarProducto.TabIndex = 18;
             buttonSeleccionarProducto.Text = "Seleccionar";
             buttonSeleccionarProducto.UseVisualStyleBackColor = true;
+            buttonSeleccionarProducto.Click += buttonSeleccionarProducto_Click;
             // 
             // comboBoxProductos
             // 
@@ -123,6 +130,7 @@
             comboBoxProductos.Name = "comboBoxProductos";
             comboBoxProductos.Size = new Size(244, 23);
             comboBoxProductos.TabIndex = 17;
+            comboBoxProductos.SelectedIndexChanged += comboBoxProductos_SelectedIndexChanged;
             // 
             // buttonBuscarProducto
             // 
@@ -132,6 +140,7 @@
             buttonBuscarProducto.TabIndex = 16;
             buttonBuscarProducto.Text = "Buscar";
             buttonBuscarProducto.UseVisualStyleBackColor = true;
+            buttonBuscarProducto.Click += buttonBuscarProducto_Click;
             // 
             // label2
             // 
@@ -160,6 +169,7 @@
             buttonVolverMenuPrincipal.TabIndex = 26;
             buttonVolverMenuPrincipal.Text = "Menú Principal";
             buttonVolverMenuPrincipal.UseVisualStyleBackColor = true;
+            buttonVolverMenuPrincipal.Click += buttonVolverMenuPrincipal_Click;
             // 
             // buttonguardarDia
             // 
@@ -169,6 +179,7 @@
             buttonguardarDia.TabIndex = 27;
             buttonguardarDia.Text = "Guardar";
             buttonguardarDia.UseVisualStyleBackColor = true;
+            buttonguardarDia.Click += buttonguardarDia_Click;
             // 
             // label4
             // 
@@ -185,6 +196,7 @@
             textBoxCAntidad.Name = "textBoxCAntidad";
             textBoxCAntidad.Size = new Size(100, 23);
             textBoxCAntidad.TabIndex = 29;
+            textBoxCAntidad.TextChanged += textBoxCAntidad_TextChanged;
             // 
             // buttonGuardarCantidad
             // 
@@ -194,6 +206,7 @@
             buttonGuardarCantidad.TabIndex = 30;
             buttonGuardarCantidad.Text = "Guardar";
             buttonGuardarCantidad.UseVisualStyleBackColor = true;
+            buttonGuardarCantidad.Click += buttonGuardarCantidad_Click;
             // 
             // Verduras
             // 

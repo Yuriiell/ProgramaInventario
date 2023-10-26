@@ -41,6 +41,7 @@
             label2 = new Label();
             label1 = new Label();
             buttonVolverMenuMermas = new Button();
+            buttonGuardarCantidad = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaMermasPlatosDevueltos).BeginInit();
             SuspendLayout();
             // 
@@ -167,11 +168,22 @@
             buttonVolverMenuMermas.UseVisualStyleBackColor = true;
             buttonVolverMenuMermas.Click += buttonVolverMenuMermas_Click;
             // 
+            // buttonGuardarCantidad
+            // 
+            buttonGuardarCantidad.Location = new Point(789, 400);
+            buttonGuardarCantidad.Name = "buttonGuardarCantidad";
+            buttonGuardarCantidad.Size = new Size(75, 23);
+            buttonGuardarCantidad.TabIndex = 51;
+            buttonGuardarCantidad.Text = "Guardar";
+            buttonGuardarCantidad.UseVisualStyleBackColor = true;
+            buttonGuardarCantidad.Click += buttonGuardarCantidad_Click;
+            // 
             // MermasPlatosDevueltos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonGuardarCantidad);
             Controls.Add(buttonVolverMenuMermas);
             Controls.Add(buttonMostrarTodo);
             Controls.Add(textBoxCantidad);
@@ -207,5 +219,6 @@
         private Label label2;
         private Label label1;
         private Button buttonVolverMenuMermas;
+        private Button buttonGuardarCantidad;
     }
 }

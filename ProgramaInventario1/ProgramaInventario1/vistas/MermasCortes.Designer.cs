@@ -41,6 +41,7 @@
             textBoxNombreProducto = new TextBox();
             textBoxCantidad = new TextBox();
             buttonMostrarTodo = new Button();
+            buttonGuardarCamtidad = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -167,11 +168,22 @@
             buttonMostrarTodo.UseVisualStyleBackColor = true;
             buttonMostrarTodo.Click += buttonMostrarTodo_Click;
             // 
+            // buttonGuardarCamtidad
+            // 
+            buttonGuardarCamtidad.Location = new Point(612, 299);
+            buttonGuardarCamtidad.Name = "buttonGuardarCamtidad";
+            buttonGuardarCamtidad.Size = new Size(75, 23);
+            buttonGuardarCamtidad.TabIndex = 26;
+            buttonGuardarCamtidad.Text = "Guardar";
+            buttonGuardarCamtidad.UseVisualStyleBackColor = true;
+            buttonGuardarCamtidad.Click += buttonGuardarCamtidad_Click;
+            // 
             // MermasCortes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonGuardarCamtidad);
             Controls.Add(buttonMostrarTodo);
             Controls.Add(textBoxCantidad);
             Controls.Add(textBoxNombreProducto);
@@ -207,5 +219,6 @@
         private TextBox textBoxNombreProducto;
         private TextBox textBoxCantidad;
         private Button buttonMostrarTodo;
+        private Button buttonGuardarCamtidad;
     }
 }

@@ -41,6 +41,7 @@
             buttonVolverMenuMermas = new Button();
             textBoxProducto = new TextBox();
             textBoxCantidad = new TextBox();
+            buttonGuardarCantidad = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaGasto).BeginInit();
             SuspendLayout();
             // 
@@ -123,7 +124,7 @@
             // 
             // buttonMostrarTodo
             // 
-            buttonMostrarTodo.Location = new Point(817, 356);
+            buttonMostrarTodo.Location = new Point(817, 395);
             buttonMostrarTodo.Name = "buttonMostrarTodo";
             buttonMostrarTodo.Size = new Size(75, 46);
             buttonMostrarTodo.TabIndex = 9;
@@ -167,11 +168,22 @@
             textBoxCantidad.TabIndex = 13;
             textBoxCantidad.TextChanged += textBoxCantidad_TextChanged;
             // 
+            // buttonGuardarCantidad
+            // 
+            buttonGuardarCantidad.Location = new Point(689, 344);
+            buttonGuardarCantidad.Name = "buttonGuardarCantidad";
+            buttonGuardarCantidad.Size = new Size(75, 23);
+            buttonGuardarCantidad.TabIndex = 14;
+            buttonGuardarCantidad.Text = "Guardar";
+            buttonGuardarCantidad.UseVisualStyleBackColor = true;
+            buttonGuardarCantidad.Click += buttonGuardarCantidad_Click;
+            // 
             // MermasGasto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonGuardarCantidad);
             Controls.Add(textBoxCantidad);
             Controls.Add(textBoxProducto);
             Controls.Add(buttonVolverMenuMermas);
@@ -209,5 +221,6 @@
         private Button buttonVolverMenuMermas;
         private TextBox textBoxProducto;
         private TextBox textBoxCantidad;
+        private Button buttonGuardarCantidad;
     }
 }

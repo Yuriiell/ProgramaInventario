@@ -66,6 +66,13 @@ namespace ProgramaInventario1.vistas
 
         }
 
+        //boton para guardar la cantidad
+
+        private void buttonGuardarCantidad_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //este es el boton para agregar el producto escogido
 
         private void buttonAgregarProducto_Click(object sender, EventArgs e)
@@ -93,5 +100,7 @@ namespace ProgramaInventario1.vistas
         {
 
         }
+
+        
     }
 }

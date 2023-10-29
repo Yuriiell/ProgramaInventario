@@ -51,12 +51,14 @@ namespace ProgramaInventario1.vistas
         }
 
         //boton para seleccionar el producto que se ecogió en el combobox de arriba
+
         private void buttonSeleccionarProducto_Click(object sender, EventArgs e)
         {
 
         }
 
         //Aquí ya se debe mostar en el formato de tabla toda la información guardada del producto. Siempre se debe mostrar lo busacado
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -134,7 +136,7 @@ namespace ProgramaInventario1.vistas
         {
             MenuPrincipal menuPrincipalForm = new MenuPrincipal();
             menuPrincipalForm.Show();
-            this.Hide(); 
+            this.Hide();
         }
     }
 }

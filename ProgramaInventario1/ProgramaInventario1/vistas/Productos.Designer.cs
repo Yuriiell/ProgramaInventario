@@ -245,7 +245,7 @@
             dataGridView1.Location = new Point(45, 191);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(919, 203);
+            dataGridView1.Size = new Size(919, 215);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 

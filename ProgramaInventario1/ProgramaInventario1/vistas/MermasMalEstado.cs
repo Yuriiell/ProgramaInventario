@@ -108,5 +108,10 @@ namespace ProgramaInventario1.vistas
         {
 
         }
+
+        private void MermasMalEstado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

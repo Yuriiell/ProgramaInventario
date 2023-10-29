@@ -156,6 +156,7 @@
             Name = "Mermas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Mermas";
+            WindowState = FormWindowState.Maximized;
             Load += Mermas_Load;
             ResumeLayout(false);
             PerformLayout();

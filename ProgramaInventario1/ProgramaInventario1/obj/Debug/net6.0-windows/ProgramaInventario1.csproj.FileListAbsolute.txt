@@ -19,3 +19,13 @@ C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaI
 C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.AssemblyInfoInputs.cache
 C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.AssemblyInfo.cs
 C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.csproj.CoreCompileInputs.cache
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.InternoConsumo.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.InternoProductos.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.MermasComidaPersonal.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.MermasCortes.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.MermasFiestaChicas.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.MermasGasto.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.MermasMalEstado.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.vistas.MermasPlatosDevueltos.resources
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.dll
+C:\Users\yosof\Documents\GitHub\ProgramaInventario\ProgramaInventario1\ProgramaInventario1\obj\Debug\net6.0-windows\ProgramaInventario1.pdb

@@ -211,6 +211,7 @@
             Controls.Add(label1);
             Name = "MermasPlatosDevueltos";
             Text = "MermasPlatosDevueltos";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaMermasPlatosDevueltos).EndInit();
             ResumeLayout(false);
             PerformLayout();

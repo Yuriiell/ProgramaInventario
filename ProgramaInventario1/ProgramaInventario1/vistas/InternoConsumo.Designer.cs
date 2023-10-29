@@ -1,6 +1,6 @@
 ﻿namespace ProgramaInventario1.vistas
 {
-    partial class Licores
+    partial class InternoConsumo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // Licores
+            // InternoConsumo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
-            Name = "Licores";
-            Text = "Licores";
+            Name = "InternoConsumo";
+            Text = "InternoConsumo";
             WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
         }

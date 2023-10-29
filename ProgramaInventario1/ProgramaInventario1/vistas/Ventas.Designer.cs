@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             buttonVentasRestaurante = new Button();
             buttonVentasTiki = new Button();
             buttonVentasSobrante = new Button();
@@ -126,6 +125,7 @@
             Controls.Add(label1);
             Name = "Ventas";
             Text = "Ventas";
+            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,7 +133,6 @@
         #endregion
 
         private Label label1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button buttonVentasRestaurante;
         private Button buttonVentasTiki;
         private Button buttonVentasSobrante;

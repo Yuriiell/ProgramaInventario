@@ -211,6 +211,7 @@
             Controls.Add(label1);
             Name = "MermasComidaPersonal";
             Text = "MermasComidaPersonal";
+            WindowState = FormWindowState.Maximized;
             Load += MermasComidaPersonal_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaMermasPlatosDevueltos).EndInit();
             ResumeLayout(false);

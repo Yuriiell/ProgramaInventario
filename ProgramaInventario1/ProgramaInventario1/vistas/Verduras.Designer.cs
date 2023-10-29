@@ -244,6 +244,7 @@
             Controls.Add(label1);
             Name = "Verduras";
             Text = "Verduras";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaGasto).EndInit();
             ResumeLayout(false);
             PerformLayout();

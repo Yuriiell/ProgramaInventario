@@ -309,6 +309,7 @@
             Controls.Add(dataGridView1);
             Name = "Pedidos";
             Text = "Pedidos";
+            WindowState = FormWindowState.Maximized;
             Load += Pedidos_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

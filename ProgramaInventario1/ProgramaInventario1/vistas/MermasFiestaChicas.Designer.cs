@@ -211,6 +211,7 @@
             Controls.Add(label1);
             Name = "MermasFiestaChicas";
             Text = "MermasFiestaChicas";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaMermasFiestaChicas).EndInit();
             ResumeLayout(false);
             PerformLayout();

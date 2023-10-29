@@ -4,6 +4,12 @@
     <Compile Update="vistas\Interno.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="vistas\InternoConsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\InternoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="vistas\Licores.cs">
       <SubType>Form</SubType>
     </Compile>

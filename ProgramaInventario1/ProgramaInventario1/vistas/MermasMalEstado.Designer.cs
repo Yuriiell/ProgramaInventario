@@ -211,6 +211,8 @@
             Controls.Add(label1);
             Name = "MermasMalEstado";
             Text = "MermasMalEstado";
+            WindowState = FormWindowState.Maximized;
+            Load += MermasMalEstado_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaMermasMalEstado).EndInit();
             ResumeLayout(false);
             PerformLayout();

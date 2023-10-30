@@ -16,5 +16,32 @@ namespace ProgramaInventario1.vistas
         {
             InitializeComponent();
         }
+
+        //este botón e spara volver al menu principal
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menuPrincipalForm = new MenuPrincipal();
+            menuPrincipalForm.Show();
+            this.Hide();
+        }
+
+        // este boton es para ir al forms InternoProductos
+
+        private void buttonPlatosBebidas_Click(object sender, EventArgs e)
+        {
+            InternoProductos internoProductosForm = new InternoProductos();
+            internoProductosForm.Show();
+            this.Close();
+        }
+
+        //este boton es para ir al forms InternoConsumo
+
+        private void buttonConsumoInterno_Click(object sender, EventArgs e)
+        {
+            InternoConsumo internoConsumoForm = new InternoConsumo();
+            internoConsumoForm.Show();
+            this.Close();
+        }
     }
 }

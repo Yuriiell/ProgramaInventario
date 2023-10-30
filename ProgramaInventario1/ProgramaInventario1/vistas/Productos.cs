@@ -12,6 +12,8 @@ namespace ProgramaInventario1.vistas
 {
     public partial class Productos : Form
     {
+        //en la base de datos la tabla se llama Producto
+
         public Productos()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace ProgramaInventario1.vistas
 
         }
 
-        //este boton busca el producto en la base de datos
+        //este boton busca el producto o productos en la base de datos
 
         private void buttonBuscarProducto_Click(object sender, EventArgs e)
         {
@@ -49,12 +51,14 @@ namespace ProgramaInventario1.vistas
         }
 
         //boton para seleccionar el producto que se ecogió en el combobox de arriba
+
         private void buttonSeleccionarProducto_Click(object sender, EventArgs e)
         {
 
         }
 
         //Aquí ya se debe mostar en el formato de tabla toda la información guardada del producto. Siempre se debe mostrar lo busacado
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -109,7 +113,7 @@ namespace ProgramaInventario1.vistas
 
 
 
-        //Con este boton se muestra toda la infromacion de toda la tabla sigueinte
+        //Con este boton se muestra toda la infromacion de toda la tabla 
 
         private void buttonBuscarTodo_Click(object sender, EventArgs e)
         {
@@ -128,10 +132,10 @@ namespace ProgramaInventario1.vistas
 
         }
 
-        private void buttonVolverMenuPrincipal_Click(object sender, EventArgs e)
+        private void buttonVolvermenuPrincipal_Click(object sender, EventArgs e)
         {
-            MenuPrincipal MenuPrincipalForms = new MenuPrincipal();
-            MenuPrincipalForms.Show();
+            MenuPrincipal menuPrincipalForm = new MenuPrincipal();
+            menuPrincipalForm.Show();
             this.Hide();
         }
     }

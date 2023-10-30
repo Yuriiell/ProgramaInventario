@@ -10,25 +10,26 @@ using ProgramaInventario1.logicaDeNegocios;
 
 namespace ProgramaInventario1.DAO
 {
-    internal class DAOGasto
+    internal class DAOGastoComidaPersonal
     {
 
-        //***** CRUD de Producto de la base de datos *****
+        //***** CRUD de Gasto comida personal *****
 
-        public void InsertarGasto(string idProducto, double Cantidad)
+
+        public void InsertarComidaPersonal(int idProducto, decimal KilosXMes)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "INSERT INTO Gasto (idProducto, Cantidad) " +
-                               "VALUES (@idProducto, @Cantidad)";
+                string query = "INSERT INTO GastoComidaPersonal (idProducto, KilosXMes) " +
+                               "VALUES (@idProducto, @KilosXMes)";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
                     command.Parameters.AddWithValue("@idProducto", idProducto);
-                    command.Parameters.AddWithValue("@Cantidad", Cantidad);
+                    command.Parameters.AddWithValue("@KilosXMes", KilosXMes);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -37,18 +38,18 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public void EliminarGasto(int id)
+        public void EliminarPlatoDevuelto(int idComidaPersonal)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "DELETE FROM Gasto WHERE idGasto = @Id";
+                string query = "DELETE FROM GastoComidaPersonal WHERE idComidaPersonal = @idComidaPersonal";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@idComidaPersonal", idComidaPersonal);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -58,20 +59,21 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarGasto(int idGasto, int idProducto, string Cantidad)
+        public static void ActualizarPlatoDevuelto(int idComidaPersonal, int idProducto, decimal KilosXMes)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "UPDATE Gasto SET idProducto = @idProducto, Cantidad = @Cantidad WHERE idGasto = @idGasto";
+                string query = "UPDATE GastoComidaPersonal SET idProducto= @idProducto, KilosXMes=@KilosXMes WHERE idComidaPersonal = @idComidaPersonal";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@idGasto", idGasto);
+
                     command.Parameters.AddWithValue("@idProducto", idProducto);
-                    command.Parameters.AddWithValue("@Cantidad", Cantidad);
+                    command.Parameters.AddWithValue("@KilosXMes", KilosXMes);
+                    command.Parameters.AddWithValue("@idComidaPersonal", idComidaPersonal);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -79,16 +81,16 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public List<Gasto> ObtenerGastos()
+        public List<ComidaPersonal> ObtenerPlatoDevuelto()
         {
-            List<Gasto> gastos = new List<Gasto>();
+            List<ComidaPersonal> comidasPersonal = new List<ComidaPersonal>();
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT idGasto, idProducto, Cantidad FROM Gasto";
+                string query = "SELECT idComidaPersonal, idProducto, KilosXMes FROM GastoComidaPersonal";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -98,52 +100,51 @@ namespace ProgramaInventario1.DAO
                     {
                         while (reader.Read())
                         {
-                            int idGasto = reader.GetInt32(0);
+                            int idComidaPersonal = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal cantidad = reader.GetDecimal(2);
+                            decimal KilosXMes = reader.GetDecimal(2);
 
-                            Gasto gasto = new Gasto(idGasto, idProducto, cantidad);
-                            gastos.Add(gasto);
+                            ComidaPersonal comidaPersonal = new ComidaPersonal(idComidaPersonal, idProducto, KilosXMes);
+                            comidasPersonal.Add(comidaPersonal);
                         }
                     }
 
                 }
             }
 
-            return gastos;
+            return comidasPersonal;
         }
 
-        public Gasto ObtenerGastoPorId(int id)
+        public ComidaPersonal ObtenerPlatoDevueltoPorId(int id)
         {
-            Gasto gasto = null;
+            ComidaPersonal comidaPersonal = null;
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT idGasto, idProducto, Cantidad FROM Gasto WHERE idGasto = @IdGasto";
+                string query = "SELECT idComidaPersonal, idProducto, KilosXMes FROM GastoComidaPersonal WHERE idComidaPersonal = @idComidaPersonal";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@IdGasto", id);
+                    command.Parameters.AddWithValue("@idComidaPersonal", id);
                     conexion.Open();
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            int idGasto = reader.GetInt32(1);
-                            int idProducto = reader.GetInt32(2);
-                            decimal Cantidad = reader.GetDecimal(3);
+                            int idComidaPersonal = reader.GetInt32(0);
+                            int idProducto = reader.GetInt32(1);
+                            decimal KilosXMes = reader.GetDecimal(2);
 
-                            gasto = new Gasto(idGasto, idProducto, Cantidad);
+                            comidaPersonal = new ComidaPersonal(idComidaPersonal, idProducto, KilosXMes);
                         }
                     }
                 }
             }
-
-            return gasto;
+            return comidaPersonal;
         }
     }
 }

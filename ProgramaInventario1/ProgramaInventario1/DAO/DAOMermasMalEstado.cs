@@ -10,25 +10,26 @@ using ProgramaInventario1.logicaDeNegocios;
 
 namespace ProgramaInventario1.DAO
 {
-    internal class DAOGasto
+    internal class DAOMermasMalEstado
     {
 
-        //***** CRUD de Producto de la base de datos *****
+        //***** CRUD de Mermas *****
 
-        public void InsertarGasto(string idProducto, double Cantidad)
+
+        public void InsertarMerma(string idProducto, double cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "INSERT INTO Gasto (idProducto, Cantidad) " +
-                               "VALUES (@idProducto, @Cantidad)";
+                string query = "INSERT INTO MermasMalEstado (idProducto, cantidad) " +
+                               "VALUES (@idProducto, @cantidad)";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
                     command.Parameters.AddWithValue("@idProducto", idProducto);
-                    command.Parameters.AddWithValue("@Cantidad", Cantidad);
+                    command.Parameters.AddWithValue("@cantidad", cantidad);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -37,18 +38,18 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public void EliminarGasto(int id)
+        public void EliminarMerma(int idMerma)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "DELETE FROM Gasto WHERE idGasto = @Id";
+                string query = "DELETE FROM MermasMalEstado WHERE idMerma = @idMerma";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@idMerma", idMerma);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -58,20 +59,20 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarGasto(int idGasto, int idProducto, string Cantidad)
+        public static void ActualizarMerma(int idMerma, int idProducto, string cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "UPDATE Gasto SET idProducto = @idProducto, Cantidad = @Cantidad WHERE idGasto = @idGasto";
+                string query = "UPDATE MermasMalEstado SET idProducto = @idProducto, cantidad = @cantidad WHERE idMerma = @idMerma";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@idGasto", idGasto);
+                    command.Parameters.AddWithValue("@idMerma", idMerma);
                     command.Parameters.AddWithValue("@idProducto", idProducto);
-                    command.Parameters.AddWithValue("@Cantidad", Cantidad);
+                    command.Parameters.AddWithValue("@cantidad", cantidad);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -79,16 +80,16 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public List<Gasto> ObtenerGastos()
+        public List<Merma> ObtenerMermas()
         {
-            List<Gasto> gastos = new List<Gasto>();
+            List<Merma> mermas = new List<Merma>();
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT idGasto, idProducto, Cantidad FROM Gasto";
+                string query = "SELECT idMerma, idProducto, cantidad FROM MermasMalEstado";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -102,48 +103,48 @@ namespace ProgramaInventario1.DAO
                             int idProducto = reader.GetInt32(1);
                             decimal cantidad = reader.GetDecimal(2);
 
-                            Gasto gasto = new Gasto(idGasto, idProducto, cantidad);
-                            gastos.Add(gasto);
+                            Merma merma = new Merma(idGasto, idProducto, cantidad);
+                            mermas.Add(merma);
                         }
                     }
 
                 }
             }
 
-            return gastos;
+            return mermas;
         }
 
-        public Gasto ObtenerGastoPorId(int id)
+        public Merma ObtenerMermaPorId(int id)
         {
-            Gasto gasto = null;
+            Merma merma = null;
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT idGasto, idProducto, Cantidad FROM Gasto WHERE idGasto = @IdGasto";
+                string query = "SELECT idProducto, cantidad FROM MermasMalEstado WHERE idMerma = @IdMerma";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@IdGasto", id);
+                    command.Parameters.AddWithValue("@IdMerma", id);
                     conexion.Open();
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            int idGasto = reader.GetInt32(1);
+                            int idMerma = reader.GetInt32(1);
                             int idProducto = reader.GetInt32(2);
                             decimal Cantidad = reader.GetDecimal(3);
 
-                            gasto = new Gasto(idGasto, idProducto, Cantidad);
+                            merma = new Merma(idMerma, idProducto, Cantidad);
                         }
                     }
                 }
             }
 
-            return gasto;
+            return merma;
         }
     }
 }

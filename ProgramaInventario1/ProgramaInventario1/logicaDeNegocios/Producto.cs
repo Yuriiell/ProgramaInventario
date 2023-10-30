@@ -29,5 +29,10 @@ public class Producto
         Tipo = tipo;
     }
 
+    public override string ToString()
+    {
+        return $"Id: {Id}, Nombre: {Nombre}, Precio: {Precio}, UnidadMedida: {UnidadMedida}, Tipo: {Tipo}";
+    }
+
 }
 

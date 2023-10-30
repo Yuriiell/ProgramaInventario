@@ -4,5 +4,59 @@
     <Compile Update="vistas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="vistas\Interno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\Licores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\Mermas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\Resumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\Verduras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Interno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Licores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Mermas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Resumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\vistas\Verduras.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

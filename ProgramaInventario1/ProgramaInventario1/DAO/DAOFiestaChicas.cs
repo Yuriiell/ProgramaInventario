@@ -10,19 +10,19 @@ using ProgramaInventario1.logicaDeNegocios;
 
 namespace ProgramaInventario1.DAO
 {
-    internal class DAOGasto
+    internal class DAOFiestaChicas
     {
 
-        //***** CRUD de Producto de la base de datos *****
+        //***** CRUD de Fiesta Chicas de la base de datos *****
 
-        public void InsertarGasto(string idProducto, double Cantidad)
+        public void InsertarFiestaChicas(string idProducto, double Cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "INSERT INTO Gasto (idProducto, Cantidad) " +
+                string query = "INSERT INTO FiestaChicas (idProducto, Cantidad) " +
                                "VALUES (@idProducto, @Cantidad)";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
@@ -37,14 +37,14 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public void EliminarGasto(int id)
+        public void EliminarFiestaChicas(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "DELETE FROM Gasto WHERE idGasto = @Id";
+                string query = "DELETE FROM FiestaChicas WHERE idFiestaChicas = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -58,18 +58,18 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarGasto(int idGasto, int idProducto, string Cantidad)
+        public static void ActualizarGasto(int idFiestaChicas, int idProducto, string Cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "UPDATE Gasto SET idProducto = @idProducto, Cantidad = @Cantidad WHERE idGasto = @idGasto";
+                string query = "UPDATE FiestaChicas SET idProducto = @idProducto, Cantidad = @Cantidad WHERE idFiestaChicas = @idFiestaChicas";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@idGasto", idGasto);
+                    command.Parameters.AddWithValue("@idFiestaChicas", idFiestaChicas);
                     command.Parameters.AddWithValue("@idProducto", idProducto);
                     command.Parameters.AddWithValue("@Cantidad", Cantidad);
 
@@ -88,7 +88,7 @@ namespace ProgramaInventario1.DAO
 
             using (conexion)
             {
-                string query = "SELECT idGasto, idProducto, Cantidad FROM Gasto";
+                string query = "SELECT idFiestaChicas, idProducto, Cantidad FROM FiestaChicas";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -98,11 +98,11 @@ namespace ProgramaInventario1.DAO
                     {
                         while (reader.Read())
                         {
-                            int idGasto = reader.GetInt32(0);
+                            int idFiestaChicas = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
                             decimal cantidad = reader.GetDecimal(2);
 
-                            Gasto gasto = new Gasto(idGasto, idProducto, cantidad);
+                            Gasto gasto = new Gasto(idFiestaChicas, idProducto, cantidad);
                             gastos.Add(gasto);
                         }
                     }
@@ -113,7 +113,7 @@ namespace ProgramaInventario1.DAO
             return gastos;
         }
 
-        public Gasto ObtenerGastoPorId(int id)
+        public Gasto ObtenerFiestaChicasPorId(int id)
         {
             Gasto gasto = null;
 
@@ -122,22 +122,22 @@ namespace ProgramaInventario1.DAO
 
             using (conexion)
             {
-                string query = "SELECT idGasto, idProducto, Cantidad FROM Gasto WHERE idGasto = @IdGasto";
+                string query = "SELECT idFiestaChicas, idProducto, Cantidad FROM FiestaChicas WHERE idFiestaChicas = @idFiestaChicas";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@IdGasto", id);
+                    command.Parameters.AddWithValue("@idFiestaChicas", id);
                     conexion.Open();
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            int idGasto = reader.GetInt32(1);
+                            int idFiestaChicas = reader.GetInt32(1);
                             int idProducto = reader.GetInt32(2);
                             decimal Cantidad = reader.GetDecimal(3);
 
-                            gasto = new Gasto(idGasto, idProducto, Cantidad);
+                            gasto = new Gasto(idFiestaChicas, idProducto, Cantidad);
                         }
                     }
                 }

@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            buttonVentasRestaurante = new Button();
-            buttonVentasTiki = new Button();
             buttonVentasSobrante = new Button();
             buttonVolverMenuPrinciapl = new Button();
-            label2 = new Label();
-            textBoxTotalVentas = new TextBox();
-            buttonGuardarTotalVentas = new Button();
+            buttonVentasVentaDiaria = new Button();
             SuspendLayout();
             // 
             // label1
@@ -48,32 +44,15 @@
             label1.TabIndex = 0;
             label1.Text = "Menú Ventas";
             // 
-            // buttonVentasRestaurante
-            // 
-            buttonVentasRestaurante.Location = new Point(644, 367);
-            buttonVentasRestaurante.Name = "buttonVentasRestaurante";
-            buttonVentasRestaurante.Size = new Size(100, 23);
-            buttonVentasRestaurante.TabIndex = 1;
-            buttonVentasRestaurante.Text = "Restaurante";
-            buttonVentasRestaurante.UseVisualStyleBackColor = true;
-            // 
-            // buttonVentasTiki
-            // 
-            buttonVentasTiki.Location = new Point(658, 510);
-            buttonVentasTiki.Name = "buttonVentasTiki";
-            buttonVentasTiki.Size = new Size(86, 23);
-            buttonVentasTiki.TabIndex = 2;
-            buttonVentasTiki.Text = "Tiki";
-            buttonVentasTiki.UseVisualStyleBackColor = true;
-            // 
             // buttonVentasSobrante
             // 
-            buttonVentasSobrante.Location = new Point(658, 661);
+            buttonVentasSobrante.Location = new Point(630, 452);
             buttonVentasSobrante.Name = "buttonVentasSobrante";
-            buttonVentasSobrante.Size = new Size(86, 23);
+            buttonVentasSobrante.Size = new Size(100, 23);
             buttonVentasSobrante.TabIndex = 3;
             buttonVentasSobrante.Text = "Sobrante";
             buttonVentasSobrante.UseVisualStyleBackColor = true;
+            buttonVentasSobrante.Click += buttonVentasSobrante_Click;
             // 
             // buttonVolverMenuPrinciapl
             // 
@@ -83,45 +62,26 @@
             buttonVolverMenuPrinciapl.TabIndex = 4;
             buttonVolverMenuPrinciapl.Text = "Menú Principal";
             buttonVolverMenuPrinciapl.UseVisualStyleBackColor = true;
+            buttonVolverMenuPrinciapl.Click += buttonVolverMenuPrinciapl_Click;
             // 
-            // label2
+            // buttonVentasVentaDiaria
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(620, 64);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Total Ventas:";
-            // 
-            // textBoxTotalVentas
-            // 
-            textBoxTotalVentas.Location = new Point(722, 61);
-            textBoxTotalVentas.Name = "textBoxTotalVentas";
-            textBoxTotalVentas.Size = new Size(100, 23);
-            textBoxTotalVentas.TabIndex = 6;
-            textBoxTotalVentas.TextChanged += textBoxTotalVentas_TextChanged;
-            // 
-            // buttonGuardarTotalVentas
-            // 
-            buttonGuardarTotalVentas.Location = new Point(828, 64);
-            buttonGuardarTotalVentas.Name = "buttonGuardarTotalVentas";
-            buttonGuardarTotalVentas.Size = new Size(75, 23);
-            buttonGuardarTotalVentas.TabIndex = 7;
-            buttonGuardarTotalVentas.Text = "Guardar";
-            buttonGuardarTotalVentas.UseVisualStyleBackColor = true;
+            buttonVentasVentaDiaria.Location = new Point(630, 390);
+            buttonVentasVentaDiaria.Name = "buttonVentasVentaDiaria";
+            buttonVentasVentaDiaria.Size = new Size(100, 23);
+            buttonVentasVentaDiaria.TabIndex = 5;
+            buttonVentasVentaDiaria.Text = "Venta Diaria";
+            buttonVentasVentaDiaria.UseVisualStyleBackColor = true;
+            buttonVentasVentaDiaria.Click += buttonVentasVentaDiaria_Click;
             // 
             // Ventas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
-            Controls.Add(buttonGuardarTotalVentas);
-            Controls.Add(textBoxTotalVentas);
-            Controls.Add(label2);
+            Controls.Add(buttonVentasVentaDiaria);
             Controls.Add(buttonVolverMenuPrinciapl);
             Controls.Add(buttonVentasSobrante);
-            Controls.Add(buttonVentasTiki);
-            Controls.Add(buttonVentasRestaurante);
             Controls.Add(label1);
             Name = "Ventas";
             Text = "Ventas";
@@ -133,12 +93,8 @@
         #endregion
 
         private Label label1;
-        private Button buttonVentasRestaurante;
-        private Button buttonVentasTiki;
         private Button buttonVentasSobrante;
         private Button buttonVolverMenuPrinciapl;
-        private Label label2;
-        private TextBox textBoxTotalVentas;
-        private Button buttonGuardarTotalVentas;
+        private Button buttonVentasVentaDiaria;
     }
 }

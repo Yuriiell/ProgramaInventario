@@ -125,5 +125,10 @@ namespace ProgramaInventario1.vistas
         {
 
         }
+
+        private void Verduras_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

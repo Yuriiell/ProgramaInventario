@@ -77,7 +77,7 @@
             // 
             // buttonMostrarTodo
             // 
-            buttonMostrarTodo.Location = new Point(878, 409);
+            buttonMostrarTodo.Location = new Point(878, 421);
             buttonMostrarTodo.Name = "buttonMostrarTodo";
             buttonMostrarTodo.Size = new Size(75, 46);
             buttonMostrarTodo.TabIndex = 22;
@@ -245,6 +245,7 @@
             Name = "Verduras";
             Text = "Verduras";
             WindowState = FormWindowState.Maximized;
+            Load += Verduras_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTablaGasto).EndInit();
             ResumeLayout(false);
             PerformLayout();

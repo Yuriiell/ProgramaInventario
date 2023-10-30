@@ -122,7 +122,7 @@ namespace ProgramaInventario1.DAO
 
             using (conexion)
             {
-                string query = "SELECT idProducto, Cantidad FROM Gasto WHERE idGasto = @IdGasto";
+                string query = "SELECT idGasto, idProducto, Cantidad FROM Gasto WHERE idGasto = @IdGasto";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {

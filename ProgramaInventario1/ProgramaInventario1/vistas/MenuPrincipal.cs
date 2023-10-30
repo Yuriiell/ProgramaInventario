@@ -72,5 +72,15 @@ namespace ProgramaInventario1.vistas
             resumenForm.Show();
             this.Close();
         }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSalirPrograma_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

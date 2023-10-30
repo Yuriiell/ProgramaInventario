@@ -28,6 +28,13 @@ namespace ProgramaInventario1.logicaDeNegocios
             Precio = precio;
         }
 
+        public Plato(int idPlato, string nombreProducto, decimal cantidad)
+        {
+            IdPlato = idPlato;
+            NombreProducto = nombreProducto;
+            Cantidad = cantidad;
+        }
+
         public override string ToString()
         {
             return $"IdPlato: {IdPlato}, nombreProducto: {NombreProducto}, Cantidad: {Cantidad}, Precio: {Precio}";

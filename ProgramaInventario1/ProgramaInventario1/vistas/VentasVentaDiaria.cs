@@ -12,11 +12,6 @@ namespace ProgramaInventario1.vistas
 {
     public partial class VentasVentaDiaria : Form
     {
-<<<<<<< HEAD
-        public VentasVentaDiaria()
-        {
-            InitializeComponent();
-=======
 
         //esta es la tabla VentaDiariaRestaurante
         //se ingresa la fecha de la venta que se desea buscar
@@ -172,7 +167,6 @@ namespace ProgramaInventario1.vistas
             Ventas ventasForm = new Ventas();
             ventasForm.Show();
             this.Hide();
->>>>>>> Sophia
         }
     }
 }

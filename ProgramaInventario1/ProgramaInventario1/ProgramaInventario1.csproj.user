@@ -13,6 +13,15 @@
     <Compile Update="vistas\Licores.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="vistas\LicoresLicor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\LicoresRestaurante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="vistas\LicoresTiki.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="vistas\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

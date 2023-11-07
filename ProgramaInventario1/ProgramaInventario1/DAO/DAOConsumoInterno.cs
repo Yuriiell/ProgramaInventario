@@ -10,7 +10,7 @@ using ProgramaInventario1.logicaDeNegocios;
 
 namespace ProgramaInventario1.DAO
 {
-    internal class DAOSobrante
+    internal class DAOConsumoInterno
     {
         //Prueba Actualización
 
@@ -28,22 +28,23 @@ namespace ProgramaInventario1.DAO
         }**/
 
 
-        //***** CRUD de sobrantes de la base de datos *****
+        //***** CRUD de Producto de la base de datos *****
 
-        public void InsertarSobrante(decimal turnoAM, decimal turnoPM)
+        public void InsertarConsumoInterno(string nombre, decimal GRM, decimal costo)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "INSERT INTO sobrante (turnoAM, turnoPM) " +
-                               "VALUES (@turnoAM, @turnoPM)";
+                string query = "INSERT INTO ConsumoInterno (nombre, GRM, costo) " +
+                               "VALUES (@nombre, @GRM, @costo)";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@turnoAM", turnoAM);
-                    command.Parameters.AddWithValue("@turnoPM", turnoPM);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@GRM", GRM);
+                    command.Parameters.AddWithValue("@costo", costo);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -52,14 +53,14 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public void Eliminarsobrante(int id)
+        public void EliminarConsumoInterno(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "DELETE FROM sobrante WHERE idSobrante = @Id";
+                string query = "DELETE FROM ConsumoInterno WHERE idConsumoInterno = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -73,20 +74,21 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarSobrante(int id, decimal turnoAM, decimal turnoPM)
+        public static void ActualizarConsumoInterno(int id, string nombre, decimal GRM, decimal costo)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "UPDATE sobrante SET turnoAM=@turnoAM, turnoPM=@turnoPM WHERE idSobrante = @Id";
+                string query = "UPDATE ConsumoInterno SET nombre=@nombre, GRM=@GRM, costo=@costo WHERE idConsumoInterno = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
                     command.Parameters.AddWithValue("@Id", id);
-                    command.Parameters.AddWithValue("@turnoAM", turnoAM);
-                    command.Parameters.AddWithValue("@turnoPM", turnoPM);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@GRM", GRM);
+                    command.Parameters.AddWithValue("@costo", costo);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -94,16 +96,16 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public List<Sobrante> ObtenerSobrante()
+        public List<ConsumoInterno> ObtenerConsumos()
         {
-            List<Sobrante> sobrantes = new List<Sobrante>();
+            List<ConsumoInterno> consumos = new List<ConsumoInterno>();
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT idSobrante, turnoAM, turnoPM FROM sobrante";
+                string query = "SELECT idConsumoInterno,nombre, GRM, costo FROM ConsumoInterno";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -113,31 +115,32 @@ namespace ProgramaInventario1.DAO
                     {
                         while (reader.Read())
                         {
-                            int idVentaTiki = reader.GetInt32(0);
-                            decimal turnoAM = reader.GetDecimal(1);
-                            decimal turnoPM = reader.GetDecimal(2);
+                            int idConsumoInterno = reader.GetInt32(0);
+                            string nombre = reader.GetString(1);
+                            decimal GRM = reader.GetDecimal(2);
+                            decimal costo = reader.GetDecimal(3);
 
-                            Sobrante sobrante = new Sobrante(idVentaTiki,turnoAM, turnoPM);
-                            sobrantes.Add(sobrante);
+                            ConsumoInterno consumo = new ConsumoInterno(idConsumoInterno, nombre, GRM, costo);
+                            consumos.Add(consumo);
                         }
                     }
 
                 }
             }
 
-            return sobrantes;
+            return consumos;
         }
 
-        public Sobrante ObtenerSobrantePorId(int id)
+        public ConsumoInterno ObtenerConsumoPorId(int id)
         {
-            Sobrante sobrante = null;
+            ConsumoInterno consumo = null;
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT idSobrante, turnoAM, turnoPM FROM sobrante WHERE idSobrante = @Id";
+                string query = "SELECT idConsumoInterno,nombre, GRM, costo FROM ConsumoInterno WHERE idConsumoInterno = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -148,17 +151,18 @@ namespace ProgramaInventario1.DAO
                     {
                         if (reader.Read())
                         {
-                            int idVentaTiki = reader.GetInt32(0);
-                            decimal turnoAM = reader.GetDecimal(1);
-                            decimal turnoPM = reader.GetDecimal(2);
+                            int idConsumoInterno = reader.GetInt32(0);
+                            string nombre = reader.GetString(1);
+                            decimal GRM = reader.GetDecimal(2);
+                            decimal costo = reader.GetDecimal(3);
 
-                            sobrante = new Sobrante(idVentaTiki, turnoAM, turnoPM);
+                            consumo = new ConsumoInterno(idConsumoInterno, nombre, GRM, costo);
                         }
                     }
                 }
             }
 
-            return sobrante;
+            return consumo;
         }
     }
 }

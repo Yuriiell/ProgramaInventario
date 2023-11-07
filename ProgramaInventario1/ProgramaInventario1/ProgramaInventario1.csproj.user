@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="vistas\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="vistas\Interno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,33 +56,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="vistas\Verduras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Interno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Licores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\MenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Mermas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Pedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Productos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Resumen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Ventas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="vistas\vistas\Verduras.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

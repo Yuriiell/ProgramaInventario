@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ProgramaInventario1.vistas
 {
-    public partial class Resumen : Form
+    public partial class ButtonVovlerMenuLicores : Form
     {
-        public Resumen()
+        public ButtonVovlerMenuLicores()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Licores licoresForm = new Licores();
+            licoresForm.Show();
+            this.Hide();
         }
     }
 }

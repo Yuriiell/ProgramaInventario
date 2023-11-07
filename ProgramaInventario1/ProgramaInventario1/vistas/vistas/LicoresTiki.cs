@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ProgramaInventario1.vistas
 {
-    public partial class Licores : Form
+    public partial class LicoresTiki : Form
     {
-        public Licores()
+        public LicoresTiki()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Licores licoresForm = new Licores();
+            licoresForm.Show();
+            this.Hide();
         }
     }
 }

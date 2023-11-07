@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ProgramaInventario1.vistas
 {
-    public partial class VentasSobrante : Form
+    public partial class VentasVentaDiaria : Form
     {
 
-        //esta es la tabla sobranteRestaurante
+        //esta es la tabla VentaDiariaRestaurante
         //se ingresa la fecha de la venta que se desea buscar
 
         private void textBoxFechaBuscarR_TextChanged(object sender, EventArgs e)
@@ -23,12 +23,14 @@ namespace ProgramaInventario1.vistas
 
         //Se busca la venta ingresada y se muestra en GridDataView
 
+
         private void buttonBuscarFechaR_Click(object sender, EventArgs e)
         {
 
         }
 
-        //aqui es donde se muestra la venta escogida segun el dia, y siempre se debe mostrar, aquí mismo se muestran todas la ventas al presionar el boton mostrar todo
+        //aqui es donde se muestra el sobrante escogida segun el dia, y siempre se debe mostrar, aquí mismo se muestran todos los osbrantes al presionar el boton mostrar todo
+
 
         private void dataGridViewTablaRestaurante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -56,6 +58,7 @@ namespace ProgramaInventario1.vistas
         {
 
         }
+
         private void textBoxPMR_TextChanged(object sender, EventArgs e)
         {
 
@@ -67,6 +70,7 @@ namespace ProgramaInventario1.vistas
         }
 
         //agregar, editar o eliminar la venta según los datos que se pongan, iguala como se ha estado haciendo.
+
 
         private void buttonAgregarVentaR_Click(object sender, EventArgs e)
         {
@@ -83,14 +87,14 @@ namespace ProgramaInventario1.vistas
 
         }
 
-        //mostrat todas las ventas
+        //mostrar todas las ventas
 
         private void buttonMostrarTodoRestaurante_Click(object sender, EventArgs e)
         {
 
         }
 
-        //es la tabla sobranteTiki
+        //es la tabla VentaDiariaTiki
         //son las mismas intrucciones que las de arriba
 
         private void textBoxFechaBuscarT_TextChanged(object sender, EventArgs e)
@@ -99,6 +103,11 @@ namespace ProgramaInventario1.vistas
         }
 
         private void buttonBuscarFechaT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -149,11 +158,6 @@ namespace ProgramaInventario1.vistas
         }
 
         private void buttonMostarTodoT_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
 
         }

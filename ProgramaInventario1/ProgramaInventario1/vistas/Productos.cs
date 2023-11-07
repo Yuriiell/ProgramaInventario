@@ -52,20 +52,20 @@ namespace ProgramaInventario1.vistas
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filtro = comboBox1.Text.ToLower(); // Obtener el filtro (por ejemplo, 'arroz')
+            //string filtro = comboBox1.Text.ToLower(); // Obtener el filtro (por ejemplo, 'arroz')
 
             // Realizar la búsqueda en la base de datos y cargar los resultados en un DataGridView
-            List<Producto> productosFiltrados = DAOProducto.ObtenerProductosFiltrados(filtro);
-            dataGridView1.DataSource = productosFiltrados;
+            //List<Producto> productosFiltrados = DAOProducto.ObtenerProductosFiltrados(filtro);
+           // dataGridView1.DataSource = productosFiltrados;
         }
 
         public void buttonSeleccionarProducto_Click(object sender, EventArgs e)
         {
             // Obtener el producto seleccionado en el ComboBox
-            Producto productoSeleccionado = (Producto)comboBox1.SelectedItem;
+            //Producto productoSeleccionado = (Producto)comboBox1.SelectedItem;
 
             // Mostrar información del producto seleccionado en un DataGridView
-            dataGridView1.DataSource = new List<Producto> { productoSeleccionado };
+            //dataGridView1.DataSource = new List<Producto> { productoSeleccionado };
         }
 
         public void buttonEliminarProducto_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace ProgramaInventario1.vistas
             string nuevoTipo = textBoxTipoProducto.Text;
 
             // Actualizar el producto en la base de datos con la información editada
-            DAOProducto.ActualizarProducto(productoSeleccionado.Id, nuevoNombre, nuevoPrecio, nuevaUnidadMedida, nuevoTipo);
+            //DAOProducto.ActualizarProducto(productoSeleccionado.Id, nuevoNombre, nuevoPrecio, nuevaUnidadMedida, nuevoTipo);
 
             // Actualizar la vista con los productos
             List<Producto> productosActualizados = DAOProducto.ObtenerProductos();
@@ -109,7 +109,7 @@ namespace ProgramaInventario1.vistas
             string tipo = textBoxTipoProducto.Text;
 
             // Insertar el nuevo producto en la base de datos
-            DAOProducto.InsertarProducto(nombre, precio, unidadMedida, tipo);
+            //DAOProducto.InsertarProducto(nombre, precio, unidadMedida, tipo);
 
             // Actualizar la vista con los productos, incluyendo el nuevo producto
             List<Producto> productosActualizados = DAOProducto.ObtenerProductos();

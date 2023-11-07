@@ -1,24 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {}
+    "C:\\Users\\HP\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {
+    "C:\\Users\\HP\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
         "projectName": "ProgramaInventario1",
-        "projectPath": "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
-        "packagesPath": "C:\\Users\\axelj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\axelj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -51,8 +55,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.124\\RuntimeIdentifierGraph.json"
         }
       }
     }

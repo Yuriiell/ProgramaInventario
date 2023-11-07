@@ -16,17 +16,5 @@ namespace ProgramaInventario1.vistas
         {
             InitializeComponent();
         }
-
-        private void Resumen_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonVolverMenuPrincipal_Click(object sender, EventArgs e)
-        {
-            MenuPrincipal menuPrincipalForm = new MenuPrincipal();
-            menuPrincipalForm.Show();
-            this.Hide();
-        }
     }
 }

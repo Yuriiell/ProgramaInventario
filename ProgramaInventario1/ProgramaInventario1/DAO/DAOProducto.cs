@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace ProgramaInventario1.DAO
 {
-    internal class DAOProducto
+    static class DAOProducto
     {
         //Prueba Actualización
 
@@ -29,7 +29,11 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Producto de la base de datos *****
 
+<<<<<<< HEAD
         public void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
+=======
+        public static void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
+>>>>>>> Prueba
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -53,7 +57,7 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public void EliminarProducto(int id)
+        public static void EliminarProducto(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -97,12 +101,48 @@ namespace ProgramaInventario1.DAO
             }
         }
 
+<<<<<<< HEAD
         public List<Producto> ObtenerProductos()
+=======
+        public static List<Producto> ObtenerProductos()
+>>>>>>> Prueba
         {
             List<Producto> productos = new List<Producto>();
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
+<<<<<<< HEAD
+
+            using (conexion)
+            {
+                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto";
+
+                using (SqlCommand command = new SqlCommand(query, conexion))
+                {
+                    conexion.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string nombre = reader.GetString(1);
+                            decimal precio = reader.GetDecimal(2);
+                            string unidadMedida = reader.GetString(3);
+                            string tipo = reader.GetString(4);
+
+                            Producto producto = new Producto(nombre, precio, unidadMedida, tipo);
+                            productos.Add(producto);
+                        }
+                    }
+
+                }
+            }
+
+            return productos;
+        }
+=======
+>>>>>>> Prueba
 
             using (conexion)
             {
@@ -133,7 +173,7 @@ namespace ProgramaInventario1.DAO
             return productos;
         }
 
-        public Producto ObtenerProductoPorId(int id)
+        public static Producto ObtenerProductoPorId(int id)
         {
             Producto producto = null;
 

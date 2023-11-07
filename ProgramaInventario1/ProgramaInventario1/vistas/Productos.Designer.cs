@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             comboBox = new ComboBox();
-            dataGridView1 = new DataGridView();
             buttonBuscarProducto = new Button();
             label1 = new Label();
             textBoxNombreProductoBuscar = new TextBox();
-            vScrollBar1 = new VScrollBar();
             dataGridView2 = new DataGridView();
             label2 = new Label();
             buttonEditarProducto = new Button();
@@ -50,8 +48,10 @@
             label7 = new Label();
             buttonBuscarTodo = new Button();
             buttonSeleccionarProducto = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
+            buttonVolvermenuPrincipal = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // comboBox
@@ -62,17 +62,6 @@
             comboBox.Size = new Size(304, 23);
             comboBox.TabIndex = 0;
             comboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(45, 191);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(919, 203);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // buttonBuscarProducto
             // 
@@ -102,20 +91,13 @@
             textBoxNombreProductoBuscar.TabIndex = 7;
             textBoxNombreProductoBuscar.TextChanged += textBoxNombreProducto_TextChanged;
             // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Location = new Point(991, 9);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(17, 80);
-            vScrollBar1.TabIndex = 9;
-            // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(41, 849);
+            dataGridView2.Location = new Point(1050, 96);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(919, 494);
+            dataGridView2.Size = new Size(845, 872);
             dataGridView2.TabIndex = 10;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -238,7 +220,7 @@
             // 
             // buttonBuscarTodo
             // 
-            buttonBuscarTodo.Location = new Point(41, 801);
+            buttonBuscarTodo.Location = new Point(1050, 51);
             buttonBuscarTodo.Name = "buttonBuscarTodo";
             buttonBuscarTodo.Size = new Size(113, 23);
             buttonBuscarTodo.TabIndex = 24;
@@ -256,11 +238,33 @@
             buttonSeleccionarProducto.UseVisualStyleBackColor = true;
             buttonSeleccionarProducto.Click += buttonSeleccionarProducto_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(45, 191);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(919, 215);
+            dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // buttonVolvermenuPrincipal
+            // 
+            buttonVolvermenuPrincipal.Location = new Point(12, 966);
+            buttonVolvermenuPrincipal.Name = "buttonVolvermenuPrincipal";
+            buttonVolvermenuPrincipal.Size = new Size(125, 23);
+            buttonVolvermenuPrincipal.TabIndex = 26;
+            buttonVolvermenuPrincipal.Text = "Menu Principal";
+            buttonVolvermenuPrincipal.UseVisualStyleBackColor = true;
+            buttonVolvermenuPrincipal.Click += buttonVolvermenuPrincipal_Click;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1017, 1444);
+            ClientSize = new Size(1924, 1001);
+            Controls.Add(buttonVolvermenuPrincipal);
             Controls.Add(buttonSeleccionarProducto);
             Controls.Add(buttonBuscarTodo);
             Controls.Add(label7);
@@ -277,7 +281,6 @@
             Controls.Add(buttonEditarProducto);
             Controls.Add(label2);
             Controls.Add(dataGridView2);
-            Controls.Add(vScrollBar1);
             Controls.Add(textBoxNombreProductoBuscar);
             Controls.Add(label1);
             Controls.Add(buttonBuscarProducto);
@@ -286,8 +289,9 @@
             Name = "Productos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Productos";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -295,11 +299,9 @@
         #endregion
 
         private ComboBox comboBox;
-        private DataGridView dataGridView1;
         private Button buttonBuscarProducto;
         private Label label1;
         private TextBox textBoxNombreProductoBuscar;
-        private VScrollBar vScrollBar1;
         private DataGridView dataGridView2;
         private Label label2;
         private Button buttonEditarProducto;
@@ -316,5 +318,7 @@
         private Label label7;
         private Button buttonBuscarTodo;
         private Button buttonSeleccionarProducto;
+        private DataGridView dataGridView1;
+        private Button buttonVolvermenuPrincipal;
     }
 }

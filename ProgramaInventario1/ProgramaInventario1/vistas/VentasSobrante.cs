@@ -14,21 +14,33 @@ namespace ProgramaInventario1.vistas
     {
 
         //esta es la tabla sobranteRestaurante
+<<<<<<< HEAD
         //se ingresa la fecha de la venta que se desea buscar
+=======
+        //se ingresa la fecha del sobrante que se desea buscar
+>>>>>>> prueba
 
         private void textBoxFechaBuscarR_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+<<<<<<< HEAD
         //Se busca la venta ingresada y se muestra en GridDataView
+=======
+        //Se busca el sobrante ingresado y se muestra en GridDataView
+>>>>>>> prueba
 
         private void buttonBuscarFechaR_Click(object sender, EventArgs e)
         {
 
         }
 
+<<<<<<< HEAD
         //aqui es donde se muestra la venta escogida segun el dia, y siempre se debe mostrar, aquí mismo se muestran todas la ventas al presionar el boton mostrar todo
+=======
+        //aqui es donde se muestra el sobrante escogida segun el dia, y siempre se debe mostrar, aquí mismo se muestran todos los osbrantes al presionar el boton mostrar todo
+>>>>>>> prueba
 
         private void dataGridViewTablaRestaurante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -66,7 +78,11 @@ namespace ProgramaInventario1.vistas
 
         }
 
+<<<<<<< HEAD
         //agregar, editar o eliminar la venta según los datos que se pongan, iguala como se ha estado haciendo.
+=======
+        //agregar, editar o eliminar el sobrante según los datos que se pongan, iguala como se ha estado haciendo.
+>>>>>>> prueba
 
         private void buttonAgregarVentaR_Click(object sender, EventArgs e)
         {
@@ -83,7 +99,11 @@ namespace ProgramaInventario1.vistas
 
         }
 
+<<<<<<< HEAD
         //mostrat todas las ventas
+=======
+        //mostrar todos los sobrantes
+>>>>>>> prueba
 
         private void buttonMostrarTodoRestaurante_Click(object sender, EventArgs e)
         {

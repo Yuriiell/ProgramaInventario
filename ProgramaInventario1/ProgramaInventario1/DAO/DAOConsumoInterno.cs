@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections;
+using ProgramaInventario1.logicaDeNegocios;
 
 namespace ProgramaInventario1.DAO
 {
-    static class DAOProducto
+    internal class DAOConsumoInterno
     {
         //Prueba Actualización
 
@@ -29,22 +30,21 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Producto de la base de datos *****
 
-        public static void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
+        public void InsertarConsumoInterno(string nombre, decimal GRM, decimal costo)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "INSERT INTO Producto (nombre, precio, unidadMedida, tipo) " +
-                               "VALUES (@Nombre, @Precio, @UnidadMedida, @Tipo)";
+                string query = "INSERT INTO ConsumoInterno (nombre, GRM, costo) " +
+                               "VALUES (@nombre, @GRM, @costo)";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@Nombre", nombre);
-                    command.Parameters.AddWithValue("@Precio", precio);
-                    command.Parameters.AddWithValue("@UnidadMedida", unidadMedida);
-                    command.Parameters.AddWithValue("@Tipo", tipo);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@GRM", GRM);
+                    command.Parameters.AddWithValue("@costo", costo);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -53,14 +53,14 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public static void EliminarProducto(int id)
+        public void EliminarConsumoInterno(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "DELETE FROM Producto WHERE id = @Id";
+                string query = "DELETE FROM ConsumoInterno WHERE idConsumoInterno = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -74,22 +74,21 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarProducto(int id, string nombre, double precio, string unidadMedida, string tipo)
+        public static void ActualizarConsumoInterno(int id, string nombre, decimal GRM, decimal costo)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "UPDATE Producto SET nombre = @Nombre, precio = @Precio, unidadMedida = @UnidadMedida, tipo = @Tipo WHERE id = @Id";
+                string query = "UPDATE ConsumoInterno SET nombre=@nombre, GRM=@GRM, costo=@costo WHERE idConsumoInterno = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
                     command.Parameters.AddWithValue("@Id", id);
-                    command.Parameters.AddWithValue("@Nombre", nombre);
-                    command.Parameters.AddWithValue("@Precio", precio);
-                    command.Parameters.AddWithValue("@UnidadMedida", unidadMedida);
-                    command.Parameters.AddWithValue("@Tipo", tipo);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@GRM", GRM);
+                    command.Parameters.AddWithValue("@costo", costo);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -97,16 +96,16 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public static List<Producto> ObtenerProductos()
+        public List<ConsumoInterno> ObtenerConsumos()
         {
-            List<Producto> productos = new List<Producto>();
+            List<ConsumoInterno> consumos = new List<ConsumoInterno>();
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto";
+                string query = "SELECT idConsumoInterno,nombre, GRM, costo FROM ConsumoInterno";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -116,33 +115,32 @@ namespace ProgramaInventario1.DAO
                     {
                         while (reader.Read())
                         {
-                            int id = reader.GetInt32(0);
+                            int idConsumoInterno = reader.GetInt32(0);
                             string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
-                            string unidadMedida = reader.GetString(3);
-                            string tipo = reader.GetString(4);
+                            decimal GRM = reader.GetDecimal(2);
+                            decimal costo = reader.GetDecimal(3);
 
-                            Producto producto = new Producto(nombre, precio, unidadMedida, tipo);
-                            productos.Add(producto);
+                            ConsumoInterno consumo = new ConsumoInterno(idConsumoInterno, nombre, GRM, costo);
+                            consumos.Add(consumo);
                         }
                     }
 
                 }
             }
 
-            return productos;
+            return consumos;
         }
 
-        public static Producto ObtenerProductoPorId(int id)
+        public ConsumoInterno ObtenerConsumoPorId(int id)
         {
-            Producto producto = null;
+            ConsumoInterno consumo = null;
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto WHERE id = @Id";
+                string query = "SELECT idConsumoInterno,nombre, GRM, costo FROM ConsumoInterno WHERE idConsumoInterno = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -153,20 +151,18 @@ namespace ProgramaInventario1.DAO
                     {
                         if (reader.Read())
                         {
+                            int idConsumoInterno = reader.GetInt32(0);
                             string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
-                            string unidadMedida = reader.GetString(3);
-                            string tipo = reader.GetString(4);
+                            decimal GRM = reader.GetDecimal(2);
+                            decimal costo = reader.GetDecimal(3);
 
-                            producto = new Producto(id, nombre, precio, unidadMedida, tipo);
+                            consumo = new ConsumoInterno(idConsumoInterno, nombre, GRM, costo);
                         }
                     }
                 }
             }
 
-            return producto;
+            return consumo;
         }
-
-
     }
 }

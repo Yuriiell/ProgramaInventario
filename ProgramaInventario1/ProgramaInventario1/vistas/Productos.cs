@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ProgramaInventario1.DAO;
 
 namespace ProgramaInventario1.vistas
 {
@@ -35,7 +27,30 @@ namespace ProgramaInventario1.vistas
 
         private void buttonBuscarProducto_Click(object sender, EventArgs e)
         {
+            // Obtén el valor del TextBox
+            string idText = textBoxNombreProducto.Text;
 
+            // Convierte el valor a un tipo adecuado para tu búsqueda en la base de datos,
+            // por ejemplo, a int si el ID es un número entero.
+            if (int.TryParse(idText, out int id))
+            {
+                // Llama a tu método para buscar el producto en la base de datos
+                Producto productoEncontrado = DAOProducto.ObtenerProductoPorId(id);
+
+                if (productoEncontrado != null)
+                {
+                    // Haz algo con el producto encontrado, por ejemplo, mostrarlo en un MessageBox
+                    MessageBox.Show("Producto encontrado: " + productoEncontrado.Nombre);
+                }
+                else
+                {
+                    MessageBox.Show("Producto no encontrado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID no válido. Debe ser un número."+ idText);
+            }
         }
 
         //Debe tener todos los productos precargados.

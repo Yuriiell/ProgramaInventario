@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections;
+using ProgramaInventario1.logicaDeNegocios;
 
 namespace ProgramaInventario1.DAO
 {
-    static class DAOProducto
+    internal class DAOSobrante
     {
         //Prueba Actualización
 
@@ -27,24 +28,22 @@ namespace ProgramaInventario1.DAO
         }**/
 
 
-        //***** CRUD de Producto de la base de datos *****
+        //***** CRUD de sobrantes de la base de datos *****
 
-        public static void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
+        public void InsertarSobrante(decimal turnoAM, decimal turnoPM)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "INSERT INTO Producto (nombre, precio, unidadMedida, tipo) " +
-                               "VALUES (@Nombre, @Precio, @UnidadMedida, @Tipo)";
+                string query = "INSERT INTO sobrante (turnoAM, turnoPM) " +
+                               "VALUES (@turnoAM, @turnoPM)";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
-                    command.Parameters.AddWithValue("@Nombre", nombre);
-                    command.Parameters.AddWithValue("@Precio", precio);
-                    command.Parameters.AddWithValue("@UnidadMedida", unidadMedida);
-                    command.Parameters.AddWithValue("@Tipo", tipo);
+                    command.Parameters.AddWithValue("@turnoAM", turnoAM);
+                    command.Parameters.AddWithValue("@turnoPM", turnoPM);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -53,14 +52,14 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public static void EliminarProducto(int id)
+        public void Eliminarsobrante(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "DELETE FROM Producto WHERE id = @Id";
+                string query = "DELETE FROM sobrante WHERE idSobrante = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -74,22 +73,20 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarProducto(int id, string nombre, double precio, string unidadMedida, string tipo)
+        public static void ActualizarSobrante(int id, decimal turnoAM, decimal turnoPM)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "UPDATE Producto SET nombre = @Nombre, precio = @Precio, unidadMedida = @UnidadMedida, tipo = @Tipo WHERE id = @Id";
+                string query = "UPDATE sobrante SET turnoAM=@turnoAM, turnoPM=@turnoPM WHERE idSobrante = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
                     command.Parameters.AddWithValue("@Id", id);
-                    command.Parameters.AddWithValue("@Nombre", nombre);
-                    command.Parameters.AddWithValue("@Precio", precio);
-                    command.Parameters.AddWithValue("@UnidadMedida", unidadMedida);
-                    command.Parameters.AddWithValue("@Tipo", tipo);
+                    command.Parameters.AddWithValue("@turnoAM", turnoAM);
+                    command.Parameters.AddWithValue("@turnoPM", turnoPM);
 
                     conexion.Open();
                     command.ExecuteNonQuery();
@@ -97,16 +94,16 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public static List<Producto> ObtenerProductos()
+        public List<Sobrante> ObtenerSobrante()
         {
-            List<Producto> productos = new List<Producto>();
+            List<Sobrante> sobrantes = new List<Sobrante>();
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto";
+                string query = "SELECT idSobrante, turnoAM, turnoPM FROM sobrante";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -116,33 +113,31 @@ namespace ProgramaInventario1.DAO
                     {
                         while (reader.Read())
                         {
-                            int id = reader.GetInt32(0);
-                            string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
-                            string unidadMedida = reader.GetString(3);
-                            string tipo = reader.GetString(4);
+                            int idVentaTiki = reader.GetInt32(0);
+                            decimal turnoAM = reader.GetDecimal(1);
+                            decimal turnoPM = reader.GetDecimal(2);
 
-                            Producto producto = new Producto(nombre, precio, unidadMedida, tipo);
-                            productos.Add(producto);
+                            Sobrante sobrante = new Sobrante(idVentaTiki,turnoAM, turnoPM);
+                            sobrantes.Add(sobrante);
                         }
                     }
 
                 }
             }
 
-            return productos;
+            return sobrantes;
         }
 
-        public static Producto ObtenerProductoPorId(int id)
+        public Sobrante ObtenerSobrantePorId(int id)
         {
-            Producto producto = null;
+            Sobrante sobrante = null;
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
             using (conexion)
             {
-                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto WHERE id = @Id";
+                string query = "SELECT idSobrante, turnoAM, turnoPM FROM sobrante WHERE idSobrante = @Id";
 
                 using (SqlCommand command = new SqlCommand(query, conexion))
                 {
@@ -153,20 +148,17 @@ namespace ProgramaInventario1.DAO
                     {
                         if (reader.Read())
                         {
-                            string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
-                            string unidadMedida = reader.GetString(3);
-                            string tipo = reader.GetString(4);
+                            int idVentaTiki = reader.GetInt32(0);
+                            decimal turnoAM = reader.GetDecimal(1);
+                            decimal turnoPM = reader.GetDecimal(2);
 
-                            producto = new Producto(id, nombre, precio, unidadMedida, tipo);
+                            sobrante = new Sobrante(idVentaTiki, turnoAM, turnoPM);
                         }
                     }
                 }
             }
 
-            return producto;
+            return sobrante;
         }
-
-
     }
 }

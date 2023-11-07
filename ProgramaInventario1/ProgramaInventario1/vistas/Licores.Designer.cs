@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD:ProgramaInventario1/ProgramaInventario1/vistas/vistas/Licores.Designer.cs
             buttonLicoresLicor = new Button();
             buttonLicoresRestaurante = new Button();
             buttonLicoresTiki = new Button();
@@ -74,15 +75,22 @@
             buttonVolverMenúPrincipal.UseVisualStyleBackColor = true;
             buttonVolverMenúPrincipal.Click += buttonVolverMenúPrincipal_Click;
             // 
+=======
+            SuspendLayout();
+            // 
+>>>>>>> origin/Fer:ProgramaInventario1/ProgramaInventario1/vistas/Licores.Designer.cs
             // Licores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+<<<<<<< HEAD:ProgramaInventario1/ProgramaInventario1/vistas/vistas/Licores.Designer.cs
             Controls.Add(buttonVolverMenúPrincipal);
             Controls.Add(buttonLicoresTiki);
             Controls.Add(buttonLicoresRestaurante);
             Controls.Add(buttonLicoresLicor);
+=======
+>>>>>>> origin/Fer:ProgramaInventario1/ProgramaInventario1/vistas/Licores.Designer.cs
             Name = "Licores";
             Text = "Licores";
             WindowState = FormWindowState.Maximized;

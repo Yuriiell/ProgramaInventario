@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD:ProgramaInventario1/ProgramaInventario1/vistas/vistas/Resumen.Designer.cs
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -629,11 +630,16 @@
             textBoxR6.Size = new Size(100, 23);
             textBoxR6.TabIndex = 66;
             // 
+=======
+            SuspendLayout();
+            // 
+>>>>>>> origin/Fer:ProgramaInventario1/ProgramaInventario1/vistas/Resumen.Designer.cs
             // Resumen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1001);
+<<<<<<< HEAD:ProgramaInventario1/ProgramaInventario1/vistas/vistas/Resumen.Designer.cs
             Controls.Add(textBoxR6);
             Controls.Add(label30);
             Controls.Add(label29);
@@ -707,6 +713,12 @@
             Load += Resumen_Load;
             ResumeLayout(false);
             PerformLayout();
+=======
+            Name = "Resumen";
+            Text = "Resumen";
+            WindowState = FormWindowState.Maximized;
+            ResumeLayout(false);
+>>>>>>> origin/Fer:ProgramaInventario1/ProgramaInventario1/vistas/Resumen.Designer.cs
         }
 
         #endregion

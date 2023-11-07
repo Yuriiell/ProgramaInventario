@@ -34,24 +34,33 @@ namespace ProgramaInventario1.DAO
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
 
-            using (conexion)
+            try
             {
-                string query = "INSERT INTO Producto (nombre, precio, unidadMedida, tipo) " +
-                               "VALUES (@Nombre, @Precio, @UnidadMedida, @Tipo)";
-
-                using (SqlCommand command = new SqlCommand(query, conexion))
+                using (conexion)
                 {
-                    command.Parameters.AddWithValue("@Nombre", nombre);
-                    command.Parameters.AddWithValue("@Precio", precio);
-                    command.Parameters.AddWithValue("@UnidadMedida", unidadMedida);
-                    command.Parameters.AddWithValue("@Tipo", tipo);
+                    string query = "INSERT INTO Producto (nombre, precio, unidadMedida, tipo) " +
+                                   "VALUES (@Nombre, @Precio, @UnidadMedida, @Tipo)";
 
-                    conexion.Open();
-                    command.ExecuteNonQuery();
-                    conexion.Close();
+                    using (SqlCommand command = new SqlCommand(query, conexion))
+                    {
+                        command.Parameters.AddWithValue("@Nombre", nombre);
+                        command.Parameters.AddWithValue("@Precio", precio);
+                        command.Parameters.AddWithValue("@UnidadMedida", unidadMedida);
+                        command.Parameters.AddWithValue("@Tipo", tipo);
+
+                        conexion.Open();
+                        command.ExecuteNonQuery();
+                        conexion.Close();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                // Manejo de la excepción: muestra un mensaje de error o registra el error en un archivo de registro.
+                Console.WriteLine("Error al insertar producto: " + ex.Message);
+            }
         }
+
 
         public static void EliminarProducto(int id)
         {

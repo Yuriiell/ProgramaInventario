@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace ProgramaInventario1.DAO
 {
-    static class DAOProducto
+    internal class DAOProducto
     {
         //Prueba Actualización
 
@@ -29,7 +29,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Producto de la base de datos *****
 
-        public static void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
+        public void InsertarProducto(string nombre, double precio, string unidadMedida, string tipo)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -53,7 +53,7 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public static void EliminarProducto(int id)
+        public void EliminarProducto(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -97,7 +97,7 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public static List<Producto> ObtenerProductos()
+        public List<Producto> ObtenerProductos()
         {
             List<Producto> productos = new List<Producto>();
 
@@ -133,7 +133,7 @@ namespace ProgramaInventario1.DAO
             return productos;
         }
 
-        public static Producto ObtenerProductoPorId(int id)
+        public Producto ObtenerProductoPorId(int id)
         {
             Producto producto = null;
 

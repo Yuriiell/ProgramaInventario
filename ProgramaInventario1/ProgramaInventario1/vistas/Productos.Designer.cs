@@ -99,7 +99,7 @@
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(845, 872);
             dataGridView2.TabIndex = 10;
-            //dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // label2
             // 
@@ -109,7 +109,7 @@
             label2.Size = new Size(522, 15);
             label2.TabIndex = 11;
             label2.Text = "Si desea editar el producto, ingrese la información que desea cambiar y presione el botón \"Editar\".";
-            //label2.Click += label2_Click;
+            label2.Click += label2_Click;
             // 
             // buttonEditarProducto
             // 
@@ -147,7 +147,7 @@
             textBoxNombreProducto.Name = "textBoxNombreProducto";
             textBoxNombreProducto.Size = new Size(100, 23);
             textBoxNombreProducto.TabIndex = 15;
-            //textBoxNombreProducto.TextChanged += textBoxNombreProducto_TextChanged_1;
+            textBoxNombreProducto.TextChanged += textBoxNombreProducto_TextChanged_1;
             // 
             // textBoPrecioProducto
             // 
@@ -155,7 +155,7 @@
             textBoPrecioProducto.Name = "textBoPrecioProducto";
             textBoPrecioProducto.Size = new Size(100, 23);
             textBoPrecioProducto.TabIndex = 16;
-            //textBoPrecioProducto.TextChanged += textBoPrecioProducto_TextChanged;
+            textBoPrecioProducto.TextChanged += textBoPrecioProducto_TextChanged;
             // 
             // textBoxUnidadMedida
             // 
@@ -163,7 +163,7 @@
             textBoxUnidadMedida.Name = "textBoxUnidadMedida";
             textBoxUnidadMedida.Size = new Size(100, 23);
             textBoxUnidadMedida.TabIndex = 17;
-            //textBoxUnidadMedida.TextChanged += textBoxUnidadMedida_TextChanged;
+            textBoxUnidadMedida.TextChanged += textBoxUnidadMedida_TextChanged;
             // 
             // textBoxTipoProducto
             // 
@@ -171,7 +171,7 @@
             textBoxTipoProducto.Name = "textBoxTipoProducto";
             textBoxTipoProducto.Size = new Size(100, 23);
             textBoxTipoProducto.TabIndex = 18;
-            //textBoxTipoProducto.TextChanged += textBoxTipoProducto_TextChanged;
+            textBoxTipoProducto.TextChanged += textBoxTipoProducto_TextChanged;
             // 
             // label3
             // 
@@ -247,11 +247,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(919, 215);
             dataGridView1.TabIndex = 1;
-<<<<<<< HEAD
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-=======
-            //dataGridView1.CellContentClick += dataGridView1_CellContentClick;
->>>>>>> prueba
             // 
             // buttonVolvermenuPrincipal
             // 

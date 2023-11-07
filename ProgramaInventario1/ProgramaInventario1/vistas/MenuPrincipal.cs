@@ -17,7 +17,6 @@ namespace ProgramaInventario1.vistas
             InitializeComponent();
         }
 
-<<<<<<< HEAD
         private void botonVistaProductos_Click(object sender, EventArgs e)
         {
             Productos productosForm = new Productos();
@@ -65,98 +64,23 @@ namespace ProgramaInventario1.vistas
             Licores licoresForm = new Licores();
             licoresForm.Show();
             this.Close();
-=======
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-
->>>>>>> prueba
         }
 
         private void botonVistaResumen_Click(object sender, EventArgs e)
         {
             Resumen resumenForm = new Resumen();
             resumenForm.Show();
-<<<<<<< HEAD
             this.Close();
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
 
-=======
-            this.Hide();
->>>>>>> prueba
         }
 
         private void buttonSalirPrograma_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
         }
     }
 }
-=======
-            this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int indice = cmb.SelectedIndex;
-            if (indice == 0)
-            {
-                Productos productosForm = new Productos();
-                productosForm.Show();
-                this.Hide();
-            }
-            else if (indice == 1)
-            {
-                Mermas mermasForm = new Mermas();
-                mermasForm.Show();
-                this.Hide();
-            }
-            else if (indice == 2)
-            {
-                Verduras verdurasForm = new Verduras();
-                verdurasForm.Show();
-                this.Hide();
-            }
-            else if (indice == 3)
-            {
-                Interno internoForm = new Interno();
-                internoForm.Show();
-                this.Hide();
-            }
-            else if (indice == 4)
-            {
-                Pedidos pedidosForm = new Pedidos();
-                pedidosForm.Show();
-                this.Hide();
-            }
-            else if (indice == 5)
-            {
-                Ventas ventasForm = new Ventas();
-                ventasForm.Show();
-                this.Hide();
-            }
-            else
-            {
-                Licores licoresForm = new Licores();
-                licoresForm.Show();
-                this.Hide();
-            }
-        }
-    }
-}
-
->>>>>>> prueba

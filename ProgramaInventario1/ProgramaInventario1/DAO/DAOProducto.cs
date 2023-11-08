@@ -61,7 +61,42 @@ namespace ProgramaInventario1.DAO
             }
         }
 
+        public static List<Producto> ObtenerProductosFiltrados(string filtro)
+        {
+            List<Producto> productosFiltrados = new List<Producto>();
 
+            string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
+            SqlConnection conexion = new SqlConnection(conexion1);
+
+            using (conexion)
+            {
+                string query = "SELECT id, nombre, precio, unidadMedida, tipo FROM Producto WHERE LOWER(nombre) LIKE @Filtro";
+
+                using (SqlCommand command = new SqlCommand(query, conexion))
+                {
+                    command.Parameters.AddWithValue("@Filtro", "%" + filtro.ToLower() + "%");
+
+                    conexion.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(0);
+                            string nombre = reader.GetString(1);
+                            decimal precio = reader.GetDecimal(2);
+                            string unidadMedida = reader.GetString(3);
+                            string tipo = reader.GetString(4);
+
+                            Producto producto = new Producto(id, nombre, precio, unidadMedida, tipo);
+                            productosFiltrados.Add(producto);
+                        }
+                    }
+                }
+            }
+
+            return productosFiltrados;
+        }
         public static void EliminarProducto(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
@@ -144,7 +179,7 @@ namespace ProgramaInventario1.DAO
 
         public static Producto ObtenerProductoPorId(int id)
         {
-            Producto producto = null;
+            Producto producto = null; // Declarar una instancia de Producto
 
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -175,6 +210,7 @@ namespace ProgramaInventario1.DAO
 
             return producto;
         }
+
 
 
     }

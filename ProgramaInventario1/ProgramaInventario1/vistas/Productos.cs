@@ -7,22 +7,19 @@ namespace ProgramaInventario1.vistas
         public Productos()
         {
             InitializeComponent();
+            CargarProductosComboBox(); // Llenar el ComboBox con los nombres de productos al iniciar la vista
+            CargarProductosDataGridView(); // Mostrar todos los productos en el DataGridView al iniciar la vista
         }
 
-        public void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el Label.
         }
-        
-        //Aquí el usuario debe ingresar el id del producto que desee hacerle crud
-        public void textBoxNombreProducto_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-        public void buttonBuscarProducto_Click(object sender, EventArgs e)
+
+        private void buttonBuscarProducto_Click(object sender, EventArgs e)
         {
             string idText = textBoxNombreProducto.Text;
-
             if (!string.IsNullOrWhiteSpace(idText) && int.TryParse(idText, out int id))
             {
                 try
@@ -31,8 +28,7 @@ namespace ProgramaInventario1.vistas
 
                     if (productoEncontrado != null)
                     {
-                        // Mostrar información del producto encontrado en un DataGridView
-                        dataGridView1.DataSource = new List<Producto> { productoEncontrado };
+                        MessageBox.Show("Producto encontrado: " + productoEncontrado.Nombre);
                     }
                     else
                     {
@@ -50,79 +46,56 @@ namespace ProgramaInventario1.vistas
             }
         }
 
-        public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filtro = comboBox1.Text.ToLower(); // Obtener el filtro (por ejemplo, 'arroz')
-
-            // Realizar la búsqueda en la base de datos y cargar los resultados en un DataGridView
-            List<Producto> productosFiltrados = DAOProducto.ObtenerProductosFiltrados(filtro);
-            dataGridView1.DataSource = productosFiltrados;
+            CargarProductosDataGridViewFiltrados(comboBox1.Text);
         }
 
-        public void buttonSeleccionarProducto_Click(object sender, EventArgs e)
+        private void buttonSeleccionarProducto_Click(object sender, EventArgs e)
         {
-            // Obtener el producto seleccionado en el ComboBox
-            Producto productoSeleccionado = (Producto)comboBox1.SelectedItem;
-
-            // Mostrar información del producto seleccionado en un DataGridView
-            dataGridView1.DataSource = new List<Producto> { productoSeleccionado };
+            if (comboBox1.SelectedItem is Producto productoSeleccionado)
+            {
+                dataGridView1.DataSource = new BindingSource(new List<Producto> { productoSeleccionado }, null);
+            }
         }
 
-        public void buttonEliminarProducto_Click(object sender, EventArgs e)
+        private void buttonEliminarProducto_Click(object sender, EventArgs e)
         {
-            // Obtener el producto seleccionado en el DataGridView
-            Producto productoSeleccionado = (Producto)dataGridView1.SelectedRows[0].DataBoundItem;
-
-            // Eliminar el producto de la base de datos
-            DAOProducto.EliminarProducto(productoSeleccionado.Id);
-
-            // Actualizar la vista con los productos restantes
-            List<Producto> productosRestantes = DAOProducto.ObtenerProductos();
-            dataGridView1.DataSource = productosRestantes;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Producto productoSeleccionado = (Producto)dataGridView1.SelectedRows[0].DataBoundItem;
+                DAOProducto.EliminarProducto(productoSeleccionado.Id);
+                CargarProductosDataGridView();
+            }
         }
 
-        public void buttonEditarProducto_Click(object sender, EventArgs e)
+        private void buttonEditarProducto_Click(object sender, EventArgs e)
         {
-            // Obtener el producto seleccionado en el DataGridView
-            Producto productoSeleccionado = (Producto)dataGridView1.SelectedRows[0].DataBoundItem;
-
-            // Obtener los valores editados de los TextBox
-            string nuevoNombre = textBoxNombreProducto.Text;
-            decimal nuevoPrecio = decimal.Parse(textBoPrecioProducto.Text);
-            string nuevaUnidadMedida = textBoxUnidadMedida.Text;
-            string nuevoTipo = textBoxTipoProducto.Text;
-
-            // Actualizar el producto en la base de datos con la información editada
-            DAOProducto.ActualizarProducto(productoSeleccionado.Id, nuevoNombre, nuevoPrecio, nuevaUnidadMedida, nuevoTipo);
-
-            // Actualizar la vista con los productos
-            List<Producto> productosActualizados = DAOProducto.ObtenerProductos();
-            dataGridView1.DataSource = productosActualizados;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Producto productoSeleccionado = (Producto)dataGridView1.SelectedRows[0].DataBoundItem;
+                string nuevoNombre = textBoxNombreProducto.Text;
+                double nuevoPrecio = (double)decimal.Parse(textBoPrecioProducto.Text);
+                string nuevaUnidadMedida = textBoxUnidadMedida.Text;
+                string nuevoTipo = textBoxTipoProducto.Text;
+                DAOProducto.ActualizarProducto(productoSeleccionado.Id, nuevoNombre, nuevoPrecio, nuevaUnidadMedida, nuevoTipo);
+                CargarProductosDataGridView();
+            }
         }
 
-        public void buttonAgregarProducto_Click(object sender, EventArgs e)
+        private void buttonAgregarProducto_Click(object sender, EventArgs e)
         {
-            // Obtener los valores ingresados en los TextBox
             string nombre = textBoxNombreProducto.Text;
-            decimal precio = decimal.Parse(textBoPrecioProducto.Text);
+            double precio = (double)decimal.Parse(textBoPrecioProducto.Text);
             string unidadMedida = textBoxUnidadMedida.Text;
             string tipo = textBoxTipoProducto.Text;
-
-            // Insertar el nuevo producto en la base de datos
             DAOProducto.InsertarProducto(nombre, precio, unidadMedida, tipo);
-
-            // Actualizar la vista con los productos, incluyendo el nuevo producto
-            List<Producto> productosActualizados = DAOProducto.ObtenerProductos();
-            dataGridView1.DataSource = productosActualizados;
+            CargarProductosDataGridView();
         }
 
-        public void buttonBuscarTodo_Click(object sender, EventArgs e)
+        private void buttonBuscarTodo_Click(object sender, EventArgs e)
         {
-            // Obtener todos los productos de la base de datos
-            List<Producto> todosLosProductos = DAOProducto.ObtenerProductos();
-
-            // Mostrar todos los productos en un DataGridView
-            dataGridView2.DataSource = todosLosProductos;
+            CargarProductosDataGridView();
         }
 
         private void buttonVolvermenuPrincipal_Click(object sender, EventArgs e)
@@ -131,6 +104,67 @@ namespace ProgramaInventario1.vistas
             menuPrincipalForm.Show();
             this.Hide();
         }
+
+        private void CargarProductosComboBox()
+        {
+            // Llenar el ComboBox con los nombres de productos desde la base de datos
+            var productos = DAOProducto.ObtenerProductos();
+            comboBox1.DataSource = productos;
+            comboBox1.DisplayMember = "Nombre";
+        }
+
+        private void CargarProductosDataGridView()
+        {
+            // Mostrar todos los productos en el DataGridView
+            var productos = DAOProducto.ObtenerProductos();
+            dataGridView1.DataSource = new BindingSource(productos, null);
+        }
+
+        private void CargarProductosDataGridViewFiltrados(string filtro)
+        {
+            // Filtrar productos en el DataGridView según el filtro
+            var productosFiltrados = DAOProducto.ObtenerProductosFiltrados(filtro);
+            dataGridView1.DataSource = new BindingSource(productosFiltrados, null);
+        }
+        private void textBoxNombreProducto_TextChanged(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando cambia el texto en el TextBox.
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el DataGridView (celda).
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el Label (etiqueta).
+        }
+
+        private void textBoxNombreProducto_TextChanged_1(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando el contenido del TextBox cambia.
+        }
+
+        private void textBoPrecioProducto_TextChanged(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando el contenido del TextBox cambia.
+        }
+
+        private void textBoxTipoProducto_TextChanged(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando el contenido del TextBox cambia.
+        }
+
+        private void textBoxUnidadMedida_TextChanged(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando el contenido del TextBox cambia.
+        }
+        private void dataGridView1_CellContentClick(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando el contenido del TextBox cambia.
+        }
+
     }
 }
 

@@ -32,7 +32,6 @@
             buttonBuscarProducto = new Button();
             label1 = new Label();
             textBoxNombreProductoBuscar = new TextBox();
-            dataGridView2 = new DataGridView();
             label2 = new Label();
             buttonEditarProducto = new Button();
             buttonEliminarProducto = new Button();
@@ -46,18 +45,17 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            buttonBuscarTodo = new Button();
             buttonSeleccionarProducto = new Button();
             dataGridView1 = new DataGridView();
             buttonVolvermenuPrincipal = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(51, 197);
+            comboBox1.Location = new Point(51, 179);
             comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(347, 28);
@@ -66,7 +64,7 @@
             // 
             // buttonBuscarProducto
             // 
-            buttonBuscarProducto.Location = new Point(201, 140);
+            buttonBuscarProducto.Location = new Point(190, 127);
             buttonBuscarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonBuscarProducto.Name = "buttonBuscarProducto";
             buttonBuscarProducto.Size = new Size(86, 31);
@@ -87,29 +85,17 @@
             // 
             // textBoxNombreProductoBuscar
             // 
-            textBoxNombreProductoBuscar.Location = new Point(51, 141);
+            textBoxNombreProductoBuscar.Location = new Point(51, 127);
             textBoxNombreProductoBuscar.Margin = new Padding(3, 4, 3, 4);
             textBoxNombreProductoBuscar.Name = "textBoxNombreProductoBuscar";
             textBoxNombreProductoBuscar.Size = new Size(114, 27);
             textBoxNombreProductoBuscar.TabIndex = 7;
             textBoxNombreProductoBuscar.TextChanged += textBoxNombreProducto_TextChanged;
             // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(1200, 128);
-            dataGridView2.Margin = new Padding(3, 4, 3, 4);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(966, 815);
-            dataGridView2.TabIndex = 10;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(51, 617);
+            label2.Location = new Point(51, 575);
             label2.Name = "label2";
             label2.Size = new Size(663, 20);
             label2.TabIndex = 11;
@@ -118,7 +104,7 @@
             // 
             // buttonEditarProducto
             // 
-            buttonEditarProducto.Location = new Point(360, 777);
+            buttonEditarProducto.Location = new Point(386, 693);
             buttonEditarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonEditarProducto.Name = "buttonEditarProducto";
             buttonEditarProducto.Size = new Size(86, 31);
@@ -129,7 +115,7 @@
             // 
             // buttonEliminarProducto
             // 
-            buttonEliminarProducto.Location = new Point(929, 196);
+            buttonEliminarProducto.Location = new Point(941, 179);
             buttonEliminarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonEliminarProducto.Name = "buttonEliminarProducto";
             buttonEliminarProducto.Size = new Size(160, 31);
@@ -140,7 +126,7 @@
             // 
             // buttonAgregarProducto
             // 
-            buttonAgregarProducto.Location = new Point(360, 849);
+            buttonAgregarProducto.Location = new Point(491, 693);
             buttonAgregarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonAgregarProducto.Name = "buttonAgregarProducto";
             buttonAgregarProducto.Size = new Size(86, 31);
@@ -151,7 +137,7 @@
             // 
             // textBoxNombreProducto
             // 
-            textBoxNombreProducto.Location = new Point(143, 735);
+            textBoxNombreProducto.Location = new Point(203, 695);
             textBoxNombreProducto.Margin = new Padding(3, 4, 3, 4);
             textBoxNombreProducto.Name = "textBoxNombreProducto";
             textBoxNombreProducto.Size = new Size(114, 27);
@@ -160,7 +146,7 @@
             // 
             // textBoPrecioProducto
             // 
-            textBoPrecioProducto.Location = new Point(119, 788);
+            textBoPrecioProducto.Location = new Point(203, 738);
             textBoPrecioProducto.Margin = new Padding(3, 4, 3, 4);
             textBoPrecioProducto.Name = "textBoPrecioProducto";
             textBoPrecioProducto.Size = new Size(114, 27);
@@ -169,7 +155,7 @@
             // 
             // textBoxUnidadMedida
             // 
-            textBoxUnidadMedida.Location = new Point(190, 844);
+            textBoxUnidadMedida.Location = new Point(203, 777);
             textBoxUnidadMedida.Margin = new Padding(3, 4, 3, 4);
             textBoxUnidadMedida.Name = "textBoxUnidadMedida";
             textBoxUnidadMedida.Size = new Size(114, 27);
@@ -178,7 +164,7 @@
             // 
             // textBoxTipoProducto
             // 
-            textBoxTipoProducto.Location = new Point(107, 916);
+            textBoxTipoProducto.Location = new Point(203, 828);
             textBoxTipoProducto.Margin = new Padding(3, 4, 3, 4);
             textBoxTipoProducto.Name = "textBoxTipoProducto";
             textBoxTipoProducto.Size = new Size(114, 27);
@@ -188,7 +174,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(51, 739);
+            label3.Location = new Point(51, 698);
             label3.Name = "label3";
             label3.Size = new Size(64, 20);
             label3.TabIndex = 19;
@@ -197,7 +183,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(51, 788);
+            label4.Location = new Point(51, 738);
             label4.Name = "label4";
             label4.Size = new Size(50, 20);
             label4.TabIndex = 20;
@@ -206,7 +192,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(51, 855);
+            label5.Location = new Point(51, 784);
             label5.Name = "label5";
             label5.Size = new Size(133, 20);
             label5.TabIndex = 21;
@@ -215,7 +201,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(51, 920);
+            label6.Location = new Point(51, 828);
             label6.Name = "label6";
             label6.Size = new Size(39, 20);
             label6.TabIndex = 22;
@@ -224,29 +210,18 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(51, 664);
+            label7.Location = new Point(51, 621);
             label7.Name = "label7";
             label7.Size = new Size(742, 20);
             label7.TabIndex = 23;
             label7.Text = "Si desea agregar un nuevo producto, ingrese toda la información y seguidamente presione el botón \"Agregar\".";
             // 
-            // buttonBuscarTodo
-            // 
-            buttonBuscarTodo.Location = new Point(1200, 68);
-            buttonBuscarTodo.Margin = new Padding(3, 4, 3, 4);
-            buttonBuscarTodo.Name = "buttonBuscarTodo";
-            buttonBuscarTodo.Size = new Size(129, 31);
-            buttonBuscarTodo.TabIndex = 24;
-            buttonBuscarTodo.Text = "Buscar todo";
-            buttonBuscarTodo.UseVisualStyleBackColor = true;
-            buttonBuscarTodo.Click += buttonBuscarTodo_Click;
-            // 
             // buttonSeleccionarProducto
             // 
-            buttonSeleccionarProducto.Location = new Point(432, 196);
+            buttonSeleccionarProducto.Location = new Point(421, 179);
             buttonSeleccionarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonSeleccionarProducto.Name = "buttonSeleccionarProducto";
-            buttonSeleccionarProducto.Size = new Size(86, 31);
+            buttonSeleccionarProducto.Size = new Size(99, 31);
             buttonSeleccionarProducto.TabIndex = 25;
             buttonSeleccionarProducto.Text = "Seleccionar";
             buttonSeleccionarProducto.UseVisualStyleBackColor = true;
@@ -267,7 +242,7 @@
             // 
             // buttonVolvermenuPrincipal
             // 
-            buttonVolvermenuPrincipal.Location = new Point(713, 912);
+            buttonVolvermenuPrincipal.Location = new Point(958, 866);
             buttonVolvermenuPrincipal.Margin = new Padding(3, 4, 3, 4);
             buttonVolvermenuPrincipal.Name = "buttonVolvermenuPrincipal";
             buttonVolvermenuPrincipal.Size = new Size(143, 31);
@@ -276,14 +251,24 @@
             buttonVolvermenuPrincipal.UseVisualStyleBackColor = true;
             buttonVolvermenuPrincipal.Click += buttonVolvermenuPrincipal_Click;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(51, 229);
+            label10.Name = "label10";
+            label10.Size = new Size(190, 20);
+            label10.TabIndex = 29;
+            label10.Text = "Vista General de Productos:";
+            label10.Click += label10_Click;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2199, 1325);
+            Controls.Add(label10);
             Controls.Add(buttonVolvermenuPrincipal);
             Controls.Add(buttonSeleccionarProducto);
-            Controls.Add(buttonBuscarTodo);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -297,7 +282,6 @@
             Controls.Add(buttonEliminarProducto);
             Controls.Add(buttonEditarProducto);
             Controls.Add(label2);
-            Controls.Add(dataGridView2);
             Controls.Add(textBoxNombreProductoBuscar);
             Controls.Add(label1);
             Controls.Add(buttonBuscarProducto);
@@ -308,7 +292,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Productos";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -320,7 +303,6 @@
         private Button buttonBuscarProducto;
         private Label label1;
         private TextBox textBoxNombreProductoBuscar;
-        private DataGridView dataGridView2;
         private Label label2;
         private Button buttonEditarProducto;
         private Button buttonEliminarProducto;
@@ -334,9 +316,9 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private Button buttonBuscarTodo;
         private Button buttonSeleccionarProducto;
         private DataGridView dataGridView1;
         private Button buttonVolvermenuPrincipal;
+        private Label label10;
     }
 }

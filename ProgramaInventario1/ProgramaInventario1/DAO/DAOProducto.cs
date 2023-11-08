@@ -84,7 +84,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int id = reader.GetInt32(0);
                             string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
+                            double precio = reader.GetDouble(2);
                             string unidadMedida = reader.GetString(3);
                             string tipo = reader.GetString(4);
 
@@ -162,11 +162,11 @@ namespace ProgramaInventario1.DAO
                         {
                             int id = reader.GetInt32(0);
                             string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
+                            double precio = reader.GetDouble(2);
                             string unidadMedida = reader.GetString(3);
                             string tipo = reader.GetString(4);
 
-                            Producto producto = new Producto(nombre, precio, unidadMedida, tipo);
+                            Producto producto = new Producto(id, nombre, precio, unidadMedida, tipo);
                             productos.Add(producto);
                         }
                     }
@@ -198,7 +198,7 @@ namespace ProgramaInventario1.DAO
                         if (reader.Read())
                         {
                             string nombre = reader.GetString(1);
-                            decimal precio = reader.GetDecimal(2);
+                            double precio = reader.GetDouble(2);
                             string unidadMedida = reader.GetString(3);
                             string tipo = reader.GetString(4);
 

@@ -8,11 +8,11 @@ public class Producto
 {
     public int Id { get; set; }
     public string Nombre { get; set; }
-    public decimal Precio { get; set; }
+    public double Precio { get; set; }
     public string UnidadMedida { get; set; }
     public string Tipo { get; set; }
 
-    public Producto( string nombre, decimal precio, string unidadMedida, string tipo)
+    public Producto( string nombre, double precio, string unidadMedida, string tipo)
     {
         Nombre = nombre;
         Precio = precio;
@@ -20,7 +20,7 @@ public class Producto
         Tipo = tipo;
     }
 
-    public Producto(int id, string nombre, decimal precio, string unidadMedida, string tipo)
+    public Producto(int id, string nombre, double precio, string unidadMedida, string tipo)
     {
         Id= id;
         Nombre = nombre;

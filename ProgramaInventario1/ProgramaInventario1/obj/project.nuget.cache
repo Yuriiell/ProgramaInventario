@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9eK7WFGGxvFEI6V3JRP90LEEdZPJ/qNzEBL1p1Sz5kV+mVJ7E//IrkJTvzj3U1C2Oe6YX821/tZZhr/+kW46ew==",
+  "dgSpecHash": "eTrW3dOXM8ZKM/GKjqMEoyB/ZJivRV/XMM6HenjBCxP/3n6/Gv71Gk5ZJFXaAQgwtFgaH0KhzrbUEQnP1/3Gaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
+  "projectFilePath": "C:\\Users\\axelj\\Desktop\\sofi\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\axelj\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\axelj\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

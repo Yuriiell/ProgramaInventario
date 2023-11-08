@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {}
+    "C:\\Users\\axelj\\Desktop\\sofi\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {
+    "C:\\Users\\axelj\\Desktop\\sofi\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
+        "projectUniqueName": "C:\\Users\\axelj\\Desktop\\sofi\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
         "projectName": "ProgramaInventario1",
-        "projectPath": "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
+        "projectPath": "C:\\Users\\axelj\\Desktop\\sofi\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\ProgramaInventario1.csproj",
         "packagesPath": "C:\\Users\\axelj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\axelj\\Desktop\\IISem2023\\ProyectoFer\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\obj\\",
+        "outputPath": "C:\\Users\\axelj\\Desktop\\sofi\\ProgramaInventario\\ProgramaInventario1\\ProgramaInventario1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\axelj\\AppData\\Roaming\\NuGet\\NuGet.Config",

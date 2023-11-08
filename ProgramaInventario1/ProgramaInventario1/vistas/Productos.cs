@@ -75,7 +75,7 @@ namespace ProgramaInventario1.vistas
             {
                 Producto productoSeleccionado = (Producto)dataGridView1.SelectedRows[0].DataBoundItem;
                 string nuevoNombre = textBoxNombreProducto.Text;
-                double nuevoPrecio = (double)decimal.Parse(textBoPrecioProducto.Text);
+                double nuevoPrecio = double.Parse(textBoPrecioProducto.Text);
                 string nuevaUnidadMedida = textBoxUnidadMedida.Text;
                 string nuevoTipo = textBoxTipoProducto.Text;
                 DAOProducto.ActualizarProducto(productoSeleccionado.Id, nuevoNombre, nuevoPrecio, nuevaUnidadMedida, nuevoTipo);
@@ -86,15 +86,10 @@ namespace ProgramaInventario1.vistas
         private void buttonAgregarProducto_Click(object sender, EventArgs e)
         {
             string nombre = textBoxNombreProducto.Text;
-            double precio = (double)decimal.Parse(textBoPrecioProducto.Text);
+            double precio = double.Parse(textBoPrecioProducto.Text);
             string unidadMedida = textBoxUnidadMedida.Text;
             string tipo = textBoxTipoProducto.Text;
             DAOProducto.InsertarProducto(nombre, precio, unidadMedida, tipo);
-            CargarProductosDataGridView();
-        }
-
-        private void buttonBuscarTodo_Click(object sender, EventArgs e)
-        {
             CargarProductosDataGridView();
         }
 
@@ -118,6 +113,15 @@ namespace ProgramaInventario1.vistas
             // Mostrar todos los productos en el DataGridView
             var productos = DAOProducto.ObtenerProductos();
             dataGridView1.DataSource = new BindingSource(productos, null);
+
+            // Asignar los IDs correctos a los productos en el DataGridView
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.DataBoundItem is Producto producto)
+                {
+                    producto.Id = Convert.ToInt32(row.Cells["Id"].Value);
+                }
+            }
         }
 
         private void CargarProductosDataGridViewFiltrados(string filtro)
@@ -129,11 +133,6 @@ namespace ProgramaInventario1.vistas
         private void textBoxNombreProducto_TextChanged(object sender, EventArgs e)
         {
             // Aquí puedes agregar la lógica que deseas ejecutar cuando cambia el texto en el TextBox.
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el DataGridView (celda).
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -165,6 +164,10 @@ namespace ProgramaInventario1.vistas
             // Aquí puedes agregar la lógica que deseas ejecutar cuando el contenido del TextBox cambia.
         }
 
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

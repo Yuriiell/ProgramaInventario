@@ -100,7 +100,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idGasto = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal cantidad = reader.GetDecimal(2);
+                            double cantidad = reader.GetDouble(2);
 
                             Merma merma = new Merma(idGasto, idProducto, cantidad);
                             mermas.Add(merma);
@@ -135,7 +135,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idMerma = reader.GetInt32(1);
                             int idProducto = reader.GetInt32(2);
-                            decimal Cantidad = reader.GetDecimal(3);
+                            double Cantidad = reader.GetDouble(3);
 
                             merma = new Merma(idMerma, idProducto, Cantidad);
                         }

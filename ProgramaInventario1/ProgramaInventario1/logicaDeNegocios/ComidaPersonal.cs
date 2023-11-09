@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ProgramaInventario1.logicaDeNegocios
 {
-    internal class ComidaPersonal
+    public class ComidaPersonal
     {
         public int IdComidaPersonal { get; set; }
         public int IdProducto { get; set; }
-        public decimal KilosXMes { get; set; }
+        public double KilosXMes { get; set; }
 
-        public ComidaPersonal(int idComidaPersonal, int idProducto, decimal kilosXMes)
+        public ComidaPersonal(int idComidaPersonal, int idProducto, double kilosXMes)
         {
             IdComidaPersonal = idComidaPersonal;
             IdProducto = idProducto;

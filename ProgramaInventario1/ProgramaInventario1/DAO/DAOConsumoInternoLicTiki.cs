@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Licores de consumo interno Tiki de la base de datos *****
 
-        public void InsertarLicorInternoTiki(int idLicor, decimal medida, decimal cantidad)
+        public void InsertarLicorInternoTiki(int idLicor, double medida, double cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -74,7 +74,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarLicorInternoTiki(int id, int idLicor, decimal medida, decimal cantidad)
+        public static void ActualizarLicorInternoTiki(int id, int idLicor, double medida, double cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -117,8 +117,8 @@ namespace ProgramaInventario1.DAO
                         {
                             int idPlato = reader.GetInt32(0);
                             int idLicor = reader.GetInt32(1);
-                            decimal medida = reader.GetDecimal(2);
-                            decimal cantidad = reader.GetDecimal(3);
+                            double medida = reader.GetDouble(2);
+                            double cantidad = reader.GetDouble(3);
 
                             LicorConsumoInterno licor = new LicorConsumoInterno(idPlato, idLicor, medida, cantidad);
                             licores.Add(licor);
@@ -153,8 +153,8 @@ namespace ProgramaInventario1.DAO
                         {
                             int idPlato = reader.GetInt32(0);
                             int idLicor = reader.GetInt32(1);
-                            decimal medida = reader.GetDecimal(2);
-                            decimal cantidad = reader.GetDecimal(3);
+                            double medida = reader.GetDouble(2);
+                            double cantidad = reader.GetDouble(3);
 
                             licor = new LicorConsumoInterno(idPlato, idLicor, medida, cantidad);
                         }

@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Producto de la base de datos *****
 
-        public void InsertarLicor(decimal tipo, string nombre, string prest, decimal precio)
+        public void InsertarLicor(double tipo, string nombre, string prest, double precio)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -75,7 +75,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarLicor(int id, decimal tipo, string nombre, string prest, decimal precio)
+        public static void ActualizarLicor(int id, double tipo, string nombre, string prest, double precio)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -121,7 +121,7 @@ namespace ProgramaInventario1.DAO
                             int tipo = reader.GetInt32(1);
                             string nombre = reader.GetString(2);
                             string prest = reader.GetString(3);
-                            decimal precio = reader.GetDecimal(4);
+                            double precio = reader.GetDouble(4);
 
                             Licor licor = new Licor(idLicor, tipo, nombre, prest, precio);
                             licores.Add(licor);
@@ -158,7 +158,7 @@ namespace ProgramaInventario1.DAO
                             int tipo = reader.GetInt32(1);
                             string nombre = reader.GetString(2);
                             string prest = reader.GetString(3);
-                            decimal precio = reader.GetDecimal(4);
+                            double precio = reader.GetDouble(4);
 
                             licor = new Licor(idLicor, tipo, nombre, prest, precio);
                         }

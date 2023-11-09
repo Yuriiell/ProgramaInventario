@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProgramaInventario1.logicaDeNegocios
 {
-    internal class Licor
+    public class Licor
     {
         public int IdLicor { get; set; }
-        public decimal Tipo { get; set; }
+        public double Tipo { get; set; }
         public string Nombre { get; set; }
         public string Prest { get; set; }
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
-        public Licor(int idLicor, decimal tipo, string nombre, string prest, decimal precio)
+        public Licor(int idLicor, double tipo, string nombre, string prest, double precio)
         {
             IdLicor = idLicor;
             Tipo = tipo;
@@ -23,7 +23,7 @@ namespace ProgramaInventario1.logicaDeNegocios
             Precio = precio;
         }
 
-        public Licor(int idLicor, decimal tipo, string nombre, decimal precio)
+        public Licor(int idLicor, double tipo, string nombre, double precio)
         {
             IdLicor = idLicor;
             Tipo = tipo;

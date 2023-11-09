@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Producto de la base de datos *****
 
-        public void InsertarLicorInterno(decimal tipo, string nombre, decimal precio)
+        public void InsertarLicorInterno(double tipo, string nombre, double precio)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -74,7 +74,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarLicor(int id, decimal tipo, string nombre, decimal precio)
+        public static void ActualizarLicor(int id, double tipo, string nombre, double precio)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -116,9 +116,9 @@ namespace ProgramaInventario1.DAO
                         while (reader.Read())
                         {
                             int idLicor = reader.GetInt32(0);
-                            decimal tipo = reader.GetInt32(1);
+                            double tipo = reader.GetInt32(1);
                             string nombre = reader.GetString(2);
-                            decimal precio = reader.GetDecimal(3);
+                            double precio = reader.GetDouble(3);
 
                             Licor licor = new Licor(idLicor, tipo, nombre, precio);
                             licores.Add(licor);
@@ -152,9 +152,9 @@ namespace ProgramaInventario1.DAO
                         if (reader.Read())
                         {
                             int idLicor = reader.GetInt32(0);
-                            decimal tipo = reader.GetInt32(1);
+                            double tipo = reader.GetInt32(1);
                             string nombre = reader.GetString(2);
-                            decimal precio = reader.GetDecimal(3);
+                            double precio = reader.GetDouble(3);
 
                             licor = new Licor(idLicor, tipo, nombre, precio);
                         }

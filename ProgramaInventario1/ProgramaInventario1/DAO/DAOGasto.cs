@@ -15,7 +15,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Producto de la base de datos *****
 
-        public void InsertarGasto(string idProducto, double Cantidad)
+        public static void InsertarGasto(string idProducto, double Cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -37,7 +37,7 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public void EliminarGasto(int id)
+        public static void EliminarGasto(int id)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -58,7 +58,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarGasto(int idGasto, int idProducto, string Cantidad)
+        public static void ActualizarGasto(int idGasto, int idProducto, double Cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -79,7 +79,7 @@ namespace ProgramaInventario1.DAO
             }
         }
 
-        public List<Gasto> ObtenerGastos()
+        public static List<Gasto> ObtenerGastos()
         {
             List<Gasto> gastos = new List<Gasto>();
 
@@ -100,7 +100,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idGasto = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal cantidad = reader.GetDecimal(2);
+                            double cantidad = reader.GetDouble(2);
 
                             Gasto gasto = new Gasto(idGasto, idProducto, cantidad);
                             gastos.Add(gasto);
@@ -113,7 +113,7 @@ namespace ProgramaInventario1.DAO
             return gastos;
         }
 
-        public Gasto ObtenerGastoPorId(int id)
+        public static Gasto ObtenerGastoPorId(int id)
         {
             Gasto gasto = null;
 
@@ -135,7 +135,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idGasto = reader.GetInt32(1);
                             int idProducto = reader.GetInt32(2);
-                            decimal Cantidad = reader.GetDecimal(3);
+                            double Cantidad = reader.GetDouble(3);
 
                             gasto = new Gasto(idGasto, idProducto, Cantidad);
                         }

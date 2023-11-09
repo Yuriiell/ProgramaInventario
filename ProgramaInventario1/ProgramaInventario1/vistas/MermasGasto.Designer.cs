@@ -50,26 +50,28 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(300, 163);
+            label1.Location = new Point(76, 33);
             label1.Name = "label1";
-            label1.Size = new Size(63, 28);
+            label1.Size = new Size(79, 35);
             label1.TabIndex = 0;
             label1.Text = "Gasto";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(300, 231);
+            label2.Location = new Point(76, 124);
             label2.Name = "label2";
-            label2.Size = new Size(122, 15);
+            label2.Size = new Size(153, 20);
             label2.TabIndex = 1;
             label2.Text = "Nombre del Producto";
             // 
             // buttonBuscarProducto
             // 
-            buttonBuscarProducto.Location = new Point(571, 231);
+            buttonBuscarProducto.Location = new Point(427, 116);
+            buttonBuscarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonBuscarProducto.Name = "buttonBuscarProducto";
-            buttonBuscarProducto.Size = new Size(75, 23);
+            buttonBuscarProducto.Size = new Size(86, 31);
             buttonBuscarProducto.TabIndex = 3;
             buttonBuscarProducto.Text = "Buscar";
             buttonBuscarProducto.UseVisualStyleBackColor = true;
@@ -78,17 +80,19 @@
             // comboBoxProductos
             // 
             comboBoxProductos.FormattingEnabled = true;
-            comboBoxProductos.Location = new Point(301, 275);
+            comboBoxProductos.Location = new Point(123, 183);
+            comboBoxProductos.Margin = new Padding(3, 4, 3, 4);
             comboBoxProductos.Name = "comboBoxProductos";
-            comboBoxProductos.Size = new Size(244, 23);
+            comboBoxProductos.Size = new Size(278, 28);
             comboBoxProductos.TabIndex = 4;
             comboBoxProductos.SelectedIndexChanged += comboBoxProductos_SelectedIndexChanged;
             // 
             // buttonSeleccionarProducto
             // 
-            buttonSeleccionarProducto.Location = new Point(571, 275);
+            buttonSeleccionarProducto.Location = new Point(427, 183);
+            buttonSeleccionarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonSeleccionarProducto.Name = "buttonSeleccionarProducto";
-            buttonSeleccionarProducto.Size = new Size(75, 23);
+            buttonSeleccionarProducto.Size = new Size(86, 31);
             buttonSeleccionarProducto.TabIndex = 5;
             buttonSeleccionarProducto.Text = "Seleccionar";
             buttonSeleccionarProducto.UseVisualStyleBackColor = true;
@@ -97,17 +101,18 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(301, 347);
+            label3.Location = new Point(47, 278);
             label3.Name = "label3";
-            label3.Size = new Size(255, 15);
+            label3.Size = new Size(324, 20);
             label3.TabIndex = 6;
             label3.Text = "Cantidad a multiplicar por el total del producto";
             // 
             // buttonAgregarProducto
             // 
-            buttonAgregarProducto.Location = new Point(774, 230);
+            buttonAgregarProducto.Location = new Point(617, 113);
+            buttonAgregarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonAgregarProducto.Name = "buttonAgregarProducto";
-            buttonAgregarProducto.Size = new Size(118, 23);
+            buttonAgregarProducto.Size = new Size(135, 31);
             buttonAgregarProducto.TabIndex = 7;
             buttonAgregarProducto.Text = "Agregar Producto";
             buttonAgregarProducto.UseVisualStyleBackColor = true;
@@ -115,9 +120,10 @@
             // 
             // buttonEliminarProducto
             // 
-            buttonEliminarProducto.Location = new Point(774, 343);
+            buttonEliminarProducto.Location = new Point(617, 267);
+            buttonEliminarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonEliminarProducto.Name = "buttonEliminarProducto";
-            buttonEliminarProducto.Size = new Size(118, 23);
+            buttonEliminarProducto.Size = new Size(135, 31);
             buttonEliminarProducto.TabIndex = 8;
             buttonEliminarProducto.Text = "Eliminar Producto";
             buttonEliminarProducto.UseVisualStyleBackColor = true;
@@ -125,9 +131,10 @@
             // 
             // buttonMostrarTodo
             // 
-            buttonMostrarTodo.Location = new Point(817, 395);
+            buttonMostrarTodo.Location = new Point(666, 362);
+            buttonMostrarTodo.Margin = new Padding(3, 4, 3, 4);
             buttonMostrarTodo.Name = "buttonMostrarTodo";
-            buttonMostrarTodo.Size = new Size(75, 46);
+            buttonMostrarTodo.Size = new Size(86, 61);
             buttonMostrarTodo.TabIndex = 9;
             buttonMostrarTodo.Text = "Mostrar Todo";
             buttonMostrarTodo.UseVisualStyleBackColor = true;
@@ -136,18 +143,21 @@
             // dataGridViewTablaGasto
             // 
             dataGridViewTablaGasto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTablaGasto.Location = new Point(301, 461);
+            dataGridViewTablaGasto.Location = new Point(77, 431);
+            dataGridViewTablaGasto.Margin = new Padding(3, 4, 3, 4);
             dataGridViewTablaGasto.Name = "dataGridViewTablaGasto";
+            dataGridViewTablaGasto.RowHeadersWidth = 51;
             dataGridViewTablaGasto.RowTemplate.Height = 25;
-            dataGridViewTablaGasto.Size = new Size(591, 295);
+            dataGridViewTablaGasto.Size = new Size(675, 393);
             dataGridViewTablaGasto.TabIndex = 10;
             dataGridViewTablaGasto.CellContentClick += dataGridViewTablaGasto_CellContentClick;
             // 
             // buttonVolverMenuMermas
             // 
-            buttonVolverMenuMermas.Location = new Point(12, 966);
+            buttonVolverMenuMermas.Location = new Point(76, 848);
+            buttonVolverMenuMermas.Margin = new Padding(3, 4, 3, 4);
             buttonVolverMenuMermas.Name = "buttonVolverMenuMermas";
-            buttonVolverMenuMermas.Size = new Size(106, 23);
+            buttonVolverMenuMermas.Size = new Size(121, 31);
             buttonVolverMenuMermas.TabIndex = 11;
             buttonVolverMenuMermas.Text = "Menú Mermas";
             buttonVolverMenuMermas.UseVisualStyleBackColor = true;
@@ -155,25 +165,28 @@
             // 
             // textBoxProducto
             // 
-            textBoxProducto.Location = new Point(445, 228);
+            textBoxProducto.Location = new Point(242, 120);
+            textBoxProducto.Margin = new Padding(3, 4, 3, 4);
             textBoxProducto.Name = "textBoxProducto";
-            textBoxProducto.Size = new Size(100, 23);
+            textBoxProducto.Size = new Size(159, 27);
             textBoxProducto.TabIndex = 12;
             textBoxProducto.TextChanged += textBoxProducto_TextChanged;
             // 
             // textBoxCantidad
             // 
-            textBoxCantidad.Location = new Point(571, 344);
+            textBoxCantidad.Location = new Point(386, 275);
+            textBoxCantidad.Margin = new Padding(3, 4, 3, 4);
             textBoxCantidad.Name = "textBoxCantidad";
-            textBoxCantidad.Size = new Size(100, 23);
+            textBoxCantidad.Size = new Size(114, 27);
             textBoxCantidad.TabIndex = 13;
             textBoxCantidad.TextChanged += textBoxCantidad_TextChanged;
             // 
             // buttonGuardarCantidad
             // 
-            buttonGuardarCantidad.Location = new Point(689, 344);
+            buttonGuardarCantidad.Location = new Point(414, 326);
+            buttonGuardarCantidad.Margin = new Padding(3, 4, 3, 4);
             buttonGuardarCantidad.Name = "buttonGuardarCantidad";
-            buttonGuardarCantidad.Size = new Size(75, 23);
+            buttonGuardarCantidad.Size = new Size(86, 31);
             buttonGuardarCantidad.TabIndex = 14;
             buttonGuardarCantidad.Text = "Guardar";
             buttonGuardarCantidad.UseVisualStyleBackColor = true;
@@ -181,9 +194,10 @@
             // 
             // buttonEditarProducto
             // 
-            buttonEditarProducto.Location = new Point(774, 289);
+            buttonEditarProducto.Location = new Point(617, 181);
+            buttonEditarProducto.Margin = new Padding(3, 4, 3, 4);
             buttonEditarProducto.Name = "buttonEditarProducto";
-            buttonEditarProducto.Size = new Size(118, 23);
+            buttonEditarProducto.Size = new Size(135, 31);
             buttonEditarProducto.TabIndex = 32;
             buttonEditarProducto.Text = "Editar Producto";
             buttonEditarProducto.UseVisualStyleBackColor = true;
@@ -191,9 +205,9 @@
             // 
             // MermasGasto
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 1001);
+            ClientSize = new Size(910, 956);
             Controls.Add(buttonEditarProducto);
             Controls.Add(buttonGuardarCantidad);
             Controls.Add(textBoxCantidad);
@@ -209,6 +223,7 @@
             Controls.Add(buttonBuscarProducto);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MermasGasto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MermasGasto";

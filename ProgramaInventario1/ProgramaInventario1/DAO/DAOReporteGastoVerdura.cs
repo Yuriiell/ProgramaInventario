@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de reporte degasto de verduras *****
 
-        public void InsertarReporteGastoVerdura(int idProducto, decimal CantidadGastoXDia, int dia)
+        public void InsertarReporteGastoVerdura(int idProducto, double CantidadGastoXDia, int dia)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -74,7 +74,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarReporteGastoVerdura(int idProducto, decimal CantidadGastoXDia, int dia)
+        public static void ActualizarReporteGastoVerdura(int idProducto, double CantidadGastoXDia, int dia)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -116,7 +116,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idReporteVerduras = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal CantidadGastoXDia = reader.GetDecimal(2);
+                            double CantidadGastoXDia = reader.GetDouble(2);
                             int dia = reader.GetInt32(3);
 
                             ReporteGastoVerdura reporte = new ReporteGastoVerdura(idReporteVerduras, idProducto, CantidadGastoXDia, dia);
@@ -152,7 +152,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idReporteVerduras = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal CantidadGastoXDia = reader.GetDecimal(2);
+                            double CantidadGastoXDia = reader.GetDouble(2);
                             int dia = reader.GetInt32(3);
 
                             reporte = new ReporteGastoVerdura(idReporteVerduras, idProducto, CantidadGastoXDia, dia);

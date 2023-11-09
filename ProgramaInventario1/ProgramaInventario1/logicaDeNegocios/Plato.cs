@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProgramaInventario1.logicaDeNegocios
 {
-    internal class Plato
+    public class Plato
     {
         public int IdPlato { get; set; }
         public string NombreProducto { get; set; }
-        public decimal Cantidad { get; set; }
-        public decimal Precio { get; set; }
+        public double Cantidad { get; set; }
+        public double Precio { get; set; }
 
-        public Plato(int idPlato, string nombreProducto, decimal cantidad, decimal precio)
+        public Plato(int idPlato, string nombreProducto, double cantidad, double precio)
         {
             IdPlato = idPlato;
             NombreProducto = nombreProducto;
@@ -21,14 +21,14 @@ namespace ProgramaInventario1.logicaDeNegocios
             Precio = precio;
         }
 
-        public Plato(string nombreProducto, decimal cantidad, decimal precio)
+        public Plato(string nombreProducto, double cantidad, double precio)
         {
             NombreProducto = nombreProducto;
             Cantidad = cantidad;
             Precio = precio;
         }
 
-        public Plato(int idPlato, string nombreProducto, decimal cantidad)
+        public Plato(int idPlato, string nombreProducto, double cantidad)
         {
             IdPlato = idPlato;
             NombreProducto = nombreProducto;

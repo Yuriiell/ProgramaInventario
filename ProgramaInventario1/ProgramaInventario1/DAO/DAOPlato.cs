@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Licores de consumo interno Tiki de la base de datos *****
 
-        public void InsertarPlato(string nombre, decimal cantidad)
+        public void InsertarPlato(string nombre, double cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -73,7 +73,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarPlato(int id, string nombre, decimal cantidad)
+        public static void ActualizarPlato(int id, string nombre, double cantidad)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -115,7 +115,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idPlato = reader.GetInt32(0);
                             string nombre = reader.GetString(1);
-                            decimal cantidad = reader.GetDecimal(2);
+                            double cantidad = reader.GetDouble(2);
 
                             Plato plato = new Plato(idPlato, nombre, cantidad);
                             platos.Add(plato);
@@ -150,7 +150,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idPlato = reader.GetInt32(0);
                             string nombre = reader.GetString(1);
-                            decimal cantidad = reader.GetDecimal(2);
+                            double cantidad = reader.GetDouble(2);
 
                             plato = new Plato(idPlato, nombre, cantidad);
                         }

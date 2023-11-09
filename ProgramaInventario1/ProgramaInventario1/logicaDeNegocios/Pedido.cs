@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ProgramaInventario1.logicaDeNegocios
 {
-    internal class Pedido
+    public class Pedido
     {
         public int IdPedido { get; set; }
         public int IdProducto { get; set; }
         public string Dia { get; set; }
-        public decimal CantidadPedido { get; set; }
-        public decimal InvInicial { get; set; }
-        public decimal InvFinal { get; set; }
+        public double CantidadPedido { get; set; }
+        public double InvInicial { get; set; }
+        public double InvFinal { get; set; }
 
-        public Pedido(int idPedido, int idProducto, string dia, decimal cantidadPedido, decimal invInicial, decimal invFinal)
+        public Pedido(int idPedido, int idProducto, string dia, double cantidadPedido, double invInicial, double invFinal)
         {
             IdPedido = idPedido;
             IdProducto = idProducto;

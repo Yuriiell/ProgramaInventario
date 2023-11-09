@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProgramaInventario1.logicaDeNegocios
 {
-    internal class VentaDiaria
+    public class VentaDiaria
     {
         public int IdVenta { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal TurnoAM { get; set; }
-        public decimal TurnoPM { get; set; }
+        public double TurnoAM { get; set; }
+        public double TurnoPM { get; set; }
 
-        public VentaDiaria(int idVenta, DateTime fecha, decimal turnoAM, decimal turnoPM)
+        public VentaDiaria(int idVenta, DateTime fecha, double turnoAM, double turnoPM)
         {
             IdVenta = idVenta;
             Fecha = fecha;

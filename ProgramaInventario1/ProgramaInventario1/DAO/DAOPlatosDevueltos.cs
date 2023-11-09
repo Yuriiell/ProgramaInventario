@@ -104,8 +104,8 @@ namespace ProgramaInventario1.DAO
                         {
                             int idPlatoDevuelto = reader.GetInt32(0);
                             string NombreProducto = reader.GetString(1);
-                            decimal Cantidad = reader.GetDecimal(2);
-                            decimal Precio = reader.GetDecimal(3);
+                            double Cantidad = reader.GetDouble(2);
+                            double Precio = reader.GetDouble(3);
 
                             Plato plato = new Plato(idPlatoDevuelto, NombreProducto, Cantidad, Precio);
                             platos.Add(plato);
@@ -140,8 +140,8 @@ namespace ProgramaInventario1.DAO
                         {
                             int idPlato = reader.GetInt32(1);
                             string NombreProducto = reader.GetString(2);
-                            decimal Cantidad = reader.GetDecimal(3);
-                            decimal Precio = reader.GetDecimal(4);
+                            double Cantidad = reader.GetDouble(3);
+                            double Precio = reader.GetDouble(4);
 
                             plato = new Plato(idPlato, NombreProducto, Cantidad, Precio);
                         }

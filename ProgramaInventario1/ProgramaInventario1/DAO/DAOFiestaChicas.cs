@@ -100,7 +100,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idFiestaChicas = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal cantidad = reader.GetDecimal(2);
+                            double cantidad = reader.GetDouble(2);
 
                             Gasto gasto = new Gasto(idFiestaChicas, idProducto, cantidad);
                             gastos.Add(gasto);
@@ -135,7 +135,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idFiestaChicas = reader.GetInt32(1);
                             int idProducto = reader.GetInt32(2);
-                            decimal Cantidad = reader.GetDecimal(3);
+                            double Cantidad = reader.GetDouble(3);
 
                             gasto = new Gasto(idFiestaChicas, idProducto, Cantidad);
                         }

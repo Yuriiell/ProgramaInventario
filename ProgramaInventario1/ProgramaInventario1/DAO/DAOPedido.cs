@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de reporte Pedidos *****
 
-        public void InsertarPedido(int idProducto, string dia,decimal CantidadPedido, decimal invInicial, decimal invFinal)
+        public void InsertarPedido(int idProducto, string dia,double CantidadPedido, double invInicial, double invFinal)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -75,7 +75,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarPedido(int idProducto, string dia, decimal CantidadPedido, decimal invInicial, decimal invFinal)
+        public static void ActualizarPedido(int idProducto, string dia, double CantidadPedido, double invInicial, double invFinal)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -119,9 +119,9 @@ namespace ProgramaInventario1.DAO
                             int idPedido = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
                             string dia = reader.GetString(2);
-                            decimal CantidadPedido = reader.GetDecimal(3);
-                            decimal invInicial = reader.GetDecimal(4);
-                            decimal invFinal = reader.GetDecimal(5);
+                            double CantidadPedido = reader.GetDouble(3);
+                            double invInicial = reader.GetDouble(4);
+                            double invFinal = reader.GetDouble(5);
 
                             Pedido pedido = new Pedido(idPedido, idProducto, dia, CantidadPedido, invInicial, invFinal);
                             pedidos.Add(pedido);
@@ -157,9 +157,9 @@ namespace ProgramaInventario1.DAO
                             int idPedido = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
                             string dia = reader.GetString(2);
-                            decimal CantidadPedido = reader.GetDecimal(3);
-                            decimal invInicial = reader.GetDecimal(4);
-                            decimal invFinal = reader.GetDecimal(5);
+                            double CantidadPedido = reader.GetDouble(3);
+                            double invInicial = reader.GetDouble(4);
+                            double invFinal = reader.GetDouble(5);
 
                             pedido = new Pedido(idPedido, idProducto, dia, CantidadPedido, invInicial, invFinal);
                         }

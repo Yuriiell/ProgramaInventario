@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace ProgramaInventario1.logicaDeNegocios
 {
-    internal class Merma
+    public class Merma
     {
         public int IdMerma { get; set; }
         public int IdProducto { get; set; }
-        public decimal Cantidad { get; set; }
+        public double Cantidad { get; set; }
 
-        public Merma(int idProducto, decimal cantidad)
+        public Merma(int idProducto, double cantidad)
         {
             IdProducto = idProducto;
             Cantidad = cantidad;
         }
 
-        public Merma(int idMerma, int idProducto, decimal cantidad)
+        public Merma(int idMerma, int idProducto, double cantidad)
         {
             IdMerma = idMerma;
             IdProducto = idProducto;

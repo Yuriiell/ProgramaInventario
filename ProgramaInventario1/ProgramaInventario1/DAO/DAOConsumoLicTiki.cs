@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de Producto de la base de datos *****
 
-        public void InsertarLicorConsumo(int idLicor, decimal pedidos, decimal medida, decimal invInicial, int botella, decimal trago, decimal ventas)
+        public void InsertarLicorConsumo(int idLicor, double pedidos, double medida, double invInicial, int botella, double trago, double ventas)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -78,7 +78,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarLicorConsumo(int id, int idLicor, decimal pedidos, decimal medida, decimal invInicial, int botella, decimal trago, decimal ventas)
+        public static void ActualizarLicorConsumo(int id, int idLicor, double pedidos, double medida, double invInicial, int botella, double trago, double ventas)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -125,12 +125,12 @@ namespace ProgramaInventario1.DAO
                         {
                             int idConsumoLicRest = reader.GetInt32(0);
                             int idLicor = reader.GetInt32(1);
-                            decimal pedidos = reader.GetDecimal(2);
-                            decimal medida = reader.GetDecimal(3);
-                            decimal invInicial = reader.GetDecimal(4);
+                            double pedidos = reader.GetDouble(2);
+                            double medida = reader.GetDouble(3);
+                            double invInicial = reader.GetDouble(4);
                             int botella = reader.GetInt32(2);
-                            decimal trago = reader.GetDecimal(3);
-                            decimal ventas = reader.GetDecimal(4);
+                            double trago = reader.GetDouble(3);
+                            double ventas = reader.GetDouble(4);
 
                             LicorConsumo licor = new LicorConsumo(idConsumoLicRest, idLicor, pedidos, medida, invInicial, botella, trago, ventas);
                             licores.Add(licor);
@@ -165,12 +165,12 @@ namespace ProgramaInventario1.DAO
                         {
                             int idConsumoLicRest = reader.GetInt32(0);
                             int idLicor = reader.GetInt32(1);
-                            decimal pedidos = reader.GetDecimal(2);
-                            decimal medida = reader.GetDecimal(3);
-                            decimal invInicial = reader.GetDecimal(4);
+                            double pedidos = reader.GetDouble(2);
+                            double medida = reader.GetDouble(3);
+                            double invInicial = reader.GetDouble(4);
                             int botella = reader.GetInt32(2);
-                            decimal trago = reader.GetDecimal(3);
-                            decimal ventas = reader.GetDecimal(4);
+                            double trago = reader.GetDouble(3);
+                            double ventas = reader.GetDouble(4);
 
                             licor = new LicorConsumo(idConsumoLicRest, idLicor, pedidos, medida, invInicial, botella, trago, ventas);
                         }

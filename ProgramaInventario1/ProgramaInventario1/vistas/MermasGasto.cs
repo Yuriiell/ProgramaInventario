@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ProgramaInventario1.DAO;
+using ProgramaInventario1.logicaDeNegocios;
 
 namespace ProgramaInventario1.vistas
 {
@@ -15,90 +8,155 @@ namespace ProgramaInventario1.vistas
         public MermasGasto()
         {
             InitializeComponent();
+            //CargarProductosComboBox(); // Llenar el ComboBox con los nombres de productos al iniciar la vista
+            ActualizarTablaGastos(); // Mostrar todos los gastos en el DataGridView al iniciar la vista
         }
 
-        //en la base de datos la tabla se llama Gasto
+        // Variables para almacenar el producto seleccionado
+        private Producto productoSeleccionado;
 
-        private void buttonVolverMenuMermas_Click(object sender, EventArgs e)
+        private void buttonBuscarProducto_Click(object sender, EventArgs e)
         {
-            Mermas mermasForm = new Mermas();
-            mermasForm.Show();
-            this.Hide();
+            // Lógica para buscar el producto en la base de datos
+            string nombreProducto = textBoxProducto.Text;
+            List<Producto> productosEncontrados = DAOProducto.ObtenerProductosFiltrados(nombreProducto);
+
+            // Llenar el ComboBox con los productos encontrados
+            comboBoxProductos.DataSource = productosEncontrados;
+            comboBoxProductos.DisplayMember = "Nombre";
         }
 
-        //Aquí el usuario debe ingresar el nombre del producto que desee hacerle crud
+        private void comboBoxProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Cuando se selecciona un producto en el ComboBox
+            productoSeleccionado = comboBoxProductos.SelectedItem as Producto;
+
+            // Muestra la información del producto en los TextBox
+            textBoxCantidad.Text = string.Empty; // Limpia el campo Cantidad
+        }
+
+        private void buttonSeleccionarProducto_Click(object sender, EventArgs e)
+        {
+            // Muestra la información del producto seleccionado
+            if (productoSeleccionado != null)
+            {
+                // Llena los TextBox con la información del producto
+                textBoxCantidad.Text = string.Empty; // Limpia el campo Cantidad
+            }
+        }
+
+        private void buttonAgregarProducto_Click(object sender, EventArgs e)
+        {
+            // Lógica para agregar el producto con la cantidad
+            if (productoSeleccionado != null && double.TryParse(textBoxCantidad.Text, out double cantidad))
+            {
+                // Llama a un método en DAOGasto para agregar el producto con la cantidad
+                DAOGasto.InsertarGasto(productoSeleccionado.Id.ToString(), cantidad);
+
+                // Actualiza la tabla de gastos
+                ActualizarTablaGastos();
+
+                // Limpia los campos después de agregar el producto
+                textBoxProducto.Text = string.Empty;
+                comboBoxProductos.DataSource = null;
+                textBoxCantidad.Text = string.Empty;
+                productoSeleccionado = null;
+            }
+        }
+
+        private void ActualizarTablaGastos()
+        {
+            // Lógica para actualizar la tabla de gastos
+            List<Gasto> gastos = DAOGasto.ObtenerGastos();
+
+            // Llena la tabla con la información de los gastos
+            dataGridViewTablaGasto.DataSource = gastos;
+        }
+
+        private void buttonEditarProducto_Click(object sender, EventArgs e)
+        {
+            // Lógica para editar el gasto asociado al producto seleccionado
+            //if (productoSeleccionado != null && double.TryParse(textBoxCantidad.Text, out double cantidad))
+            {
+                // Supongamos que el ID del gasto está almacenado en la tabla de productos como "IdGasto"
+              //  if (productoSeleccionado.idGasto.HasValue)
+               // {
+                  //  int idGasto = productoSeleccionado.idGasto.Value;
+
+                    // Llama a un método en DAOGasto para actualizar el gasto
+                   // DAOGasto.ActualizarGasto(idGasto, productoSeleccionado.Id, cantidad);
+
+                    // Actualiza la tabla de gastos
+                   // ActualizarTablaGastos();
+
+                    // Limpia los campos después de editar el producto
+                  //  textBoxProducto.Text = string.Empty;
+                  //  comboBoxProductos.DataSource = null;
+                  //  textBoxCantidad.Text = string.Empty;
+                  //  productoSeleccionado = null;
+               // }
+                //else
+                //{
+                  //  MessageBox.Show("El producto seleccionado no tiene un ID de gasto asociado.");
+               // }
+            }
+        }
+
+        private void buttonEliminarProducto_Click(object sender, EventArgs e)
+        {
+            // Lógica para eliminar el producto seleccionado
+            if (productoSeleccionado != null)
+            {
+                // Llama a un método en DAOGasto para eliminar el producto seleccionado
+                DAOGasto.EliminarGasto(productoSeleccionado.Id);
+
+                // Actualiza la tabla de gastos
+                ActualizarTablaGastos();
+
+                // Limpia los campos después de eliminar el producto
+                textBoxProducto.Text = string.Empty;
+                comboBoxProductos.DataSource = null;
+                textBoxCantidad.Text = string.Empty;
+                productoSeleccionado = null;
+            }
+        }
+
+        private void buttonMostrarTodo_Click(object sender, EventArgs e)
+        {
+            // Muestra toda la información de la tabla de gastos
+            ActualizarTablaGastos();
+        }
 
         private void textBoxProducto_TextChanged(object sender, EventArgs e)
         {
-
         }
 
-        //este boton busca el producto o productos en la base de datos
-        private void buttonBuscarProducto_Click(object sender, EventArgs e)
+        private void dataGridViewTablaGasto_CellContentClick(object sender, EventArgs e)
         {
-
         }
-
-        //Debe tener todos los productos precargados.
-        //Y aqui es donde se debe mostar las opciones que se parezcan al producto buscado o que contengan la palabra que se busca, porque
-        //pueden haber varios tipos de arroz y el cliente solo pidio buscar arroz, deben salir todas las opciones que coincida, 
-        //y que no tome en cuenta mayusculas o minusculas. El usuario debe escoger una opcion de producto para que se muestre toda la infromación 
-        //en el elmento de abajo. 
-        private void comboBoxProductos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //boton para seleccionar el producto que se ecogió en el combobox de arriba
-        private void buttonSeleccionarProducto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Aquí ya se debe mostar en el formato de tabla toda la información guardada del producto. Siempre se debe mostrar lo busacado. También se muestra toda la infromacion la presionar le boton de Mostrar Todo.
-        private void dataGridViewTablaGasto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        //aqui se ingersa la cantidad que se multiplica por el total del producto, es el campo Cantidad de la tabla
-
         private void textBoxCantidad_TextChanged(object sender, EventArgs e)
         {
-
         }
-
-        //boton para guardar la cantidad ingresada
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
 
         private void buttonGuardarCantidad_Click(object sender, EventArgs e)
         {
-
         }
-
-        //este es el boton para agregar el producto escogido
-        private void buttonAgregarProducto_Click(object sender, EventArgs e)
+        private void buttonVolverMenuMermas_Click(object sender, EventArgs e)
         {
+            // Crear una instancia del formulario del menú anterior
+            Mermas mermasForm = new Mermas();
 
+            // Mostrar el formulario del menú anterior
+            mermasForm.Show();
+
+            // Cerrar el formulario actual
+            this.Close();
         }
 
-        //este boton elimina el producto que habia escogido
-        private void buttonEliminarProducto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        //Con este boton se muestra toda la infromacion de toda la tabla 
-        private void buttonMostrarTodo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //este boton edita la infromacion que se haya ingresado en los text box y se edita del producto previamente escogido.
-        //en los textbox, se puede ingresa cierta información, no necesariamente todo y solo cambia lo que se ingrese lo demás que no se haya puesto se queda igual.
-
-        private void buttonEditarProducto_Click(object sender, EventArgs e)
+        private void dataGridViewTablaGasto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

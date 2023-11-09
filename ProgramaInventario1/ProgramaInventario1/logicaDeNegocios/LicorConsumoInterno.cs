@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProgramaInventario1.logicaDeNegocios
 {
-    internal class LicorConsumoInterno
+    public class LicorConsumoInterno
     {
         public int IdPlato { get; set; }
         public int IdLicor { get; set; }
-        public decimal Medida { get; set; }
-        public decimal Cantidad { get; set; }
+        public double Medida { get; set; }
+        public double Cantidad { get; set; }
 
-        public LicorConsumoInterno(int idPlato, int idLicor, decimal medida, decimal cantidad)
+        public LicorConsumoInterno(int idPlato, int idLicor, double medida, double cantidad)
         {
             IdPlato = idPlato;
             IdLicor = idLicor;

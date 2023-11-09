@@ -54,42 +54,42 @@ namespace ProgramaInventario1.vistas
         {
             MermasGasto mermasGastoForm = new MermasGasto();
             mermasGastoForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonMermasCortes_Click(object sender, EventArgs e)
         {
             MermasCortes mermasCortesForm = new MermasCortes();
             mermasCortesForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonMermasMalEstado_Click(object sender, EventArgs e)
         {
             MermasMalEstado mermasMalEstadoForm = new MermasMalEstado();
             mermasMalEstadoForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonPlatosDevueltos_Click(object sender, EventArgs e)
         {
             MermasPlatosDevueltos mermasPlatosDevueltosForm = new MermasPlatosDevueltos();
             mermasPlatosDevueltosForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonComidaPersonal_Click(object sender, EventArgs e)
         {
             MermasComidaPersonal mermasComidaPersonalForm = new MermasComidaPersonal();
             mermasComidaPersonalForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonMermasFiestaChicas_Click(object sender, EventArgs e)
         {
             MermasFiestaChicas mermasFiestaChicasForm = new MermasFiestaChicas();
             mermasFiestaChicasForm.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

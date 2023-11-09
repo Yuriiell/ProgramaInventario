@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de venta diaria de la base de datos *****
 
-        public void InsertarVentaDiariaTiki(DateTime fecha, decimal turnoAM, decimal turnoPM)
+        public void InsertarVentaDiariaTiki(DateTime fecha, double turnoAM, double turnoPM)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -74,7 +74,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarVentaDiariaTiki(int id,DateTime fecha, decimal turnoAM, decimal turnoPM)
+        public static void ActualizarVentaDiariaTiki(int id,DateTime fecha, double turnoAM, double turnoPM)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -117,8 +117,8 @@ namespace ProgramaInventario1.DAO
                         {
                             int idVentaTiki = reader.GetInt32(0);
                             DateTime fecha = reader.GetDateTime(1);
-                            decimal turnoAM = reader.GetDecimal(2);
-                            decimal turnoPM = reader.GetDecimal(3);
+                            double turnoAM = reader.GetDouble(2);
+                            double turnoPM = reader.GetDouble(3);
 
                             VentaDiaria venta = new VentaDiaria(idVentaTiki, fecha, turnoAM, turnoPM);
                             ventas.Add(venta);
@@ -153,8 +153,8 @@ namespace ProgramaInventario1.DAO
                         {
                             int idVentaTiki = reader.GetInt32(0);
                             DateTime fecha = reader.GetDateTime(1);
-                            decimal turnoAM = reader.GetDecimal(2);
-                            decimal turnoPM = reader.GetDecimal(3);
+                            double turnoAM = reader.GetDouble(2);
+                            double turnoPM = reader.GetDouble(3);
 
                             venta = new VentaDiaria(idVentaTiki, fecha, turnoAM, turnoPM);
                         }

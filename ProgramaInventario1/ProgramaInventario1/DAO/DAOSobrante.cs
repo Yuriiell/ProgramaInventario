@@ -30,7 +30,7 @@ namespace ProgramaInventario1.DAO
 
         //***** CRUD de sobrantes de la base de datos *****
 
-        public void InsertarSobrante(decimal turnoAM, decimal turnoPM)
+        public void InsertarSobrante(double turnoAM, double turnoPM)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -73,7 +73,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarSobrante(int id, decimal turnoAM, decimal turnoPM)
+        public static void ActualizarSobrante(int id, double turnoAM, double turnoPM)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -114,8 +114,8 @@ namespace ProgramaInventario1.DAO
                         while (reader.Read())
                         {
                             int idVentaTiki = reader.GetInt32(0);
-                            decimal turnoAM = reader.GetDecimal(1);
-                            decimal turnoPM = reader.GetDecimal(2);
+                            double turnoAM = reader.GetDouble(1);
+                            double turnoPM = reader.GetDouble(2);
 
                             Sobrante sobrante = new Sobrante(idVentaTiki,turnoAM, turnoPM);
                             sobrantes.Add(sobrante);
@@ -149,8 +149,8 @@ namespace ProgramaInventario1.DAO
                         if (reader.Read())
                         {
                             int idVentaTiki = reader.GetInt32(0);
-                            decimal turnoAM = reader.GetDecimal(1);
-                            decimal turnoPM = reader.GetDecimal(2);
+                            double turnoAM = reader.GetDouble(1);
+                            double turnoPM = reader.GetDouble(2);
 
                             sobrante = new Sobrante(idVentaTiki, turnoAM, turnoPM);
                         }

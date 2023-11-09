@@ -16,7 +16,7 @@ namespace ProgramaInventario1.DAO
         //***** CRUD de Gasto comida personal *****
 
 
-        public void InsertarComidaPersonal(int idProducto, decimal KilosXMes)
+        public void InsertarComidaPersonal(int idProducto, double KilosXMes)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -59,7 +59,7 @@ namespace ProgramaInventario1.DAO
         }
 
 
-        public static void ActualizarPlatoDevuelto(int idComidaPersonal, int idProducto, decimal KilosXMes)
+        public static void ActualizarPlatoDevuelto(int idComidaPersonal, int idProducto, double KilosXMes)
         {
             string conexion1 = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
             SqlConnection conexion = new SqlConnection(conexion1);
@@ -102,7 +102,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idComidaPersonal = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal KilosXMes = reader.GetDecimal(2);
+                            double KilosXMes = reader.GetDouble(2);
 
                             ComidaPersonal comidaPersonal = new ComidaPersonal(idComidaPersonal, idProducto, KilosXMes);
                             comidasPersonal.Add(comidaPersonal);
@@ -137,7 +137,7 @@ namespace ProgramaInventario1.DAO
                         {
                             int idComidaPersonal = reader.GetInt32(0);
                             int idProducto = reader.GetInt32(1);
-                            decimal KilosXMes = reader.GetDecimal(2);
+                            double KilosXMes = reader.GetDouble(2);
 
                             comidaPersonal = new ComidaPersonal(idComidaPersonal, idProducto, KilosXMes);
                         }
